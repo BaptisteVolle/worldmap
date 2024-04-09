@@ -35,9 +35,16 @@ export class AppComponent implements OnInit {
   }
   
   drawMap() {
+
+    console.log('before',typeof window);
     if (typeof window !== "undefined") { 
+
+      console.log('after',typeof window);
   
       this.http.get('assets/json/world-geo.json').subscribe((worldData: any) => {
+
+
+        console.log(worldData);
         for (let i = 0; i < worldData.features.length; i++) {
           let currentCountryName:string = worldData.features[i].properties.name;
           this.allCountriesNameList.push(currentCountryName);
