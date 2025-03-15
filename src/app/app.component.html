@@ -1,32 +1,97 @@
+<div class="app-container">
+  <div class="world-map-app-container">
+    <div class="world-map-container">
+      <!-- Map renders here -->
+    </div>
 
-<div class="current-project-title">
-  <h1>World Map</h1>
-</div>
-<div class="world-map-app-container">
-  <div class="world-map-container"> 
+    <div class="map-menu mat-elevation-z4">
+      <h2 class="mat-h2">Color display</h2>
+
+      <mat-button-toggle-group class="display-toggle-group" vertical>
+        <mat-button-toggle
+          [checked]="currentAttribute === 'population'"
+          (click)="displayColorByAttribute('population')"
+        >
+          Population
+        </mat-button-toggle>
+        <mat-button-toggle
+          [checked]="currentAttribute === 'area'"
+          (click)="displayColorByAttribute('area')"
+        >
+          Area
+        </mat-button-toggle>
+        <mat-button-toggle
+          [checked]="currentAttribute === 'density'"
+          (click)="displayColorByAttribute('density')"
+        >
+          Density
+        </mat-button-toggle>
+        <mat-button-toggle
+          [checked]="currentAttribute === 'continents'"
+          (click)="displayColorByAttribute('continents')"
+        >
+          Continents
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <mat-divider></mat-divider>
+
+      <ng-container *ngIf="countryInfo">
+        <h2 class="mat-h2">Country information</h2>
+        <mat-card appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>{{ countryInfo?.name["common"] }}</mat-card-title>
+            <mat-card-subtitle>{{ countryInfo?.capital }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+            <div class="flag-container">
+              <img [src]="countryInfo?.flags['png']" alt="Flag" />
+            </div>
+
+            <mat-list>
+              <mat-list-item>
+                <span matListItemIcon><mat-icon>people</mat-icon></span>
+                <span matListItemTitle>Population</span>
+                <span matListItemLine>{{
+                  countryInfo?.population.toLocaleString()
+                }}</span>
+              </mat-list-item>
+
+              <mat-list-item>
+                <span matListItemIcon><mat-icon>map</mat-icon></span>
+                <span matListItemTitle>Area</span>
+                <span matListItemLine
+                  >{{ countryInfo?.area.toLocaleString() }} km²</span
+                >
+              </mat-list-item>
+
+              <mat-list-item>
+                <span matListItemIcon><mat-icon>people_outline</mat-icon></span>
+                <span matListItemTitle>Population Density</span>
+                <span matListItemLine
+                  >{{
+                    (
+                      countryInfo?.population / countryInfo?.area
+                    ).toLocaleString()
+                  }}
+                  people/km²</span
+                >
+              </mat-list-item>
+
+              <mat-list-item>
+                <span matListItemIcon
+                  ><mat-icon>currency_exchange</mat-icon></span
+                >
+                <span matListItemTitle>Currency</span>
+                <span matListItemLine>{{
+                  countryInfo?.currency["symbol"]
+                }}</span>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </div>
   </div>
-
-  <div class="map-menu">
-    <h2 class="map-menu-title text-dark-primary"> Color display </h2>
-    <div class="row">
-      <div class="col-6"> <button [ngClass]="currentAttribute == 'population' ? 'selected' : '' " class="btn btn-outline-dark-primary btn-toggle-display" (click)="displayColorByAttribute('population')">Population </button></div>
-      <div class="col-6"> <button [ngClass]="currentAttribute == 'area' ? 'selected' : '' " class="btn btn-outline-dark-primary btn-toggle-display" (click)="displayColorByAttribute('area')">Area</button></div>
-      <div class="col-6"> <button [ngClass]="currentAttribute == 'density' ? 'selected' : '' " class="btn btn-outline-dark-primary btn-toggle-display" (click)="displayColorByAttribute('density')">Density</button></div>
-      <div class="col-6"> <button [ngClass]="currentAttribute == 'continents' ? 'selected' : '' " class="btn btn-outline-dark-primary btn-toggle-display" (click)="displayColorByAttribute('continents');">Continents</button></div>
-    </div>
-  
-    <hr>
-    <div class="country-info" *ngIf="countryInfo">
-      <h2 style ="margin-top: 1rem;" class="map-menu-title text-dark-primary"> Country information </h2>
-      <ul class="list-group list-group-flush bg-ocean" style = "margin-top: -15px;" >
-        <li class="item-country-info list-group-item list-group-item-ocean"> <b> Name </b> :  {{ countryInfo?.name['common'] }} </li>
-        <li  class="item-country-info  list-group-item list-group-item-ocean"> <b> Capitale </b> : {{ countryInfo?.capital }}</li>
-        <li class="item-country-info  list-group-item list-group-item-ocean"><b>Population  </b> : {{ countryInfo?.population.toLocaleString()  }} </li>
-        <li  class="item-country-info  list-group-item list-group-item-ocean"> <b> Area </b>: {{ countryInfo?.area.toLocaleString() }} km²</li>
-        <li  class="item-country-info  list-group-item list-group-item-ocean"> <b>Density  </b> : {{ (countryInfo?.population/ countryInfo?.area).toLocaleString() }} h/km²</li>
-        <li  class="item-country-info  list-group-item list-group-item-ocean"> <b> Currency</b> :  {{ countryInfo?.currency['symbol'] }}</li>
-        <li  class="item-country-info  list-group-item list-group-item-ocean"> <img style="margin: auto; border:1px solid black; width: 50%; height: 50%;" src="{{ countryInfo?.flags['png']}}"> </li>
-      </ul>
-    </div>
-    </div>
 </div>
