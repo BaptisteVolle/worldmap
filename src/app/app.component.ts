@@ -142,6 +142,8 @@ export class AppComponent implements OnInit {
         .protobuf('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pbf', {
           vectorTileLayerStyles: {
             countries: (properties, zoom) => {
+              console.log('Vector tile properties:', properties);
+
               const style = this.countryStyles[properties.name] || {
                 weight: 1,
                 color: '#000',
@@ -197,6 +199,9 @@ export class AppComponent implements OnInit {
       .get('https://restcountries.com/v3.1/all')
       .subscribe((data: any[]) => {
         // Create color scale using d3
+
+        console.log('REST Countries API data:', data);
+
         const colorScale = this.createColorScale(attribute);
 
         // Map country data to style definitions
@@ -236,6 +241,7 @@ export class AppComponent implements OnInit {
       this.vectorTileLayer.setFeatureStyle((feature) => {
         const countryName = feature.properties.name;
         const style = this.countryStyles[countryName];
+        console.log('Applying style for country:', countryName, style);
 
         if (style) {
           return style;
