@@ -1,3 +1,4 @@
+import 'whatwg-fetch'; // Add this line
 import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -39,7 +40,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 })
 export class AppComponent implements OnInit {
   private map: any; // Change from L.Map to any
-  private geojsonLayer: any; // Change from L.GeoJSON to any
+  private vectorTileLayer: any; // Add vector tile layer
   private countryStyles: { [key: string]: L.PathOptions } = {};
   private selectedCountry: any;
   private wonderMarkers: any;
@@ -68,8 +69,10 @@ export class AppComponent implements OnInit {
       // Import Leaflet dynamically when in browser
       import('leaflet').then((L) => {
         this.L = L;
-        this.initMap();
-        this.loadCountries();
+        import('leaflet.vectorgrid').then(() => {
+          this.initMap();
+          this.loadCountries();
+        });
       });
     }
 
@@ -134,55 +137,49 @@ export class AppComponent implements OnInit {
   private loadCountries(): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    this.http
-      .get('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
-      .subscribe((topoData: any) => {
-        const worldData = {
-          type: 'FeatureCollection',
-          features: topojson.feature(topoData, topoData.objects.countries)
-            .features,
-        };
-
-        this.allCountriesNameList = worldData.features.map(
-          (feature: any) => feature.properties.name
-        );
-
-        // Create and add GeoJSON layer
-        this.geojsonLayer = this.L.geoJSON(worldData, {
-          style: () => ({
-            weight: 1,
-            color: '#000',
-            opacity: 1,
-            fillOpacity: 0.7,
-            fillColor: '#ccc',
-          }),
-          onEachFeature: (feature, layer) => {
-            // Add events and behavior to each country
-            layer.on({
-              mouseover: (e) => {
-                const l = e.target;
-                l.setStyle({
-                  weight: 2,
-                  color: '#666',
-                });
-                l.bringToFront();
-              },
-              mouseout: (e) => {
-                if (this.selectedCountry !== e.target) {
-                  this.geojsonLayer.resetStyle(e.target);
-                }
-              },
-              click: (e) => {
-                const country = e.target.feature.properties.name;
-                this.selectCountry(country, e.target);
-              },
-            });
+    import('leaflet.vectorgrid').then(() => {
+      this.vectorTileLayer = this.L.vectorGrid
+        .protobuf('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pbf', {
+          vectorTileLayerStyles: {
+            countries: (properties, zoom) => {
+              const style = this.countryStyles[properties.name] || {
+                weight: 1,
+                color: '#000',
+                opacity: 1,
+                fillOpacity: 0.7,
+                fillColor: '#ccc',
+              };
+              return style;
+            },
           },
-        }).addTo(this.map);
+          interactive: true,
+          getFeatureId: (feature) => feature.properties.name,
+        })
+        .addTo(this.map);
 
-        // Set initial coloring
-        this.displayColorByAttribute('population');
+      this.vectorTileLayer.on('click', (e) => {
+        const country = e.layer.properties.name;
+        this.selectCountry(country, e.layer);
       });
+
+      this.vectorTileLayer.on('mouseover', (e) => {
+        const layer = e.layer;
+        layer.setStyle({
+          weight: 2,
+          color: '#666',
+        });
+        layer.bringToFront();
+      });
+
+      this.vectorTileLayer.on('mouseout', (e) => {
+        if (this.selectedCountry !== e.layer) {
+          this.vectorTileLayer.resetFeatureStyle(e.layer);
+        }
+      });
+
+      // Set initial coloring
+      this.displayColorByAttribute('population');
+    });
   }
 
   loadWonders(): void {
@@ -235,14 +232,17 @@ export class AppComponent implements OnInit {
   }
 
   private refreshCountryStyles(): void {
-    this.geojsonLayer.eachLayer((layer: any) => {
-      const countryName = layer.feature.properties.name;
-      const style = this.countryStyles[countryName];
+    if (this.vectorTileLayer) {
+      this.vectorTileLayer.setFeatureStyle((feature) => {
+        const countryName = feature.properties.name;
+        const style = this.countryStyles[countryName];
 
-      if (style) {
-        layer.setStyle(style);
-      }
-    });
+        if (style) {
+          return style;
+        }
+        return {};
+      });
+    }
   }
 
   createColorScale(attribute: string): any {
@@ -386,15 +386,15 @@ export class AppComponent implements OnInit {
     (this.map as any).legend = legend;
   }
 
-  selectCountry(countryName: string, layer?: L.Layer): void {
+  selectCountry(countryName: string, layer?: any): void {
     // Reset previously selected country
     if (this.selectedCountry) {
-      this.geojsonLayer.resetStyle(this.selectedCountry);
+      this.vectorTileLayer.resetFeatureStyle(this.selectedCountry);
     }
 
     // Set new selected country
     if (layer) {
-      this.selectedCountry = layer as any;
+      this.selectedCountry = layer;
       this.selectedCountry.setStyle({
         weight: 3,
         color: '#FFA500',
@@ -437,7 +437,7 @@ export class AppComponent implements OnInit {
 
     // Deselect on the map
     if (this.selectedCountry) {
-      this.geojsonLayer.resetStyle(this.selectedCountry);
+      this.vectorTileLayer.resetFeatureStyle(this.selectedCountry);
       this.selectedCountry = null;
     }
   }
@@ -519,11 +519,13 @@ export class AppComponent implements OnInit {
   zoomToCountry(countryName: string): void {
     let found = false;
 
-    this.geojsonLayer.eachLayer((layer: any) => {
-      if (!found && layer.feature.properties.name === countryName) {
-        found = true;
-        this.map.fitBounds(layer.getBounds());
-      }
-    });
+    if (this.vectorTileLayer) {
+      this.vectorTileLayer.eachLayer((layer: any) => {
+        if (!found && layer.feature.properties.name === countryName) {
+          found = true;
+          this.map.fitBounds(layer.getBounds());
+        }
+      });
+    }
   }
 }
