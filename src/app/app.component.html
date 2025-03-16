@@ -1,25 +1,7 @@
 <div class="app-container">
   <div class="world-map-app-container">
-    <div class="world-map-container">
-      <!-- Map renders here -->
-
-      <div class="zoom-controls mat-elevation-z2">
-        <button mat-icon-button (click)="zoomIn()">
-          <mat-icon>add</mat-icon>
-        </button>
-        <button mat-icon-button (click)="zoomOut()">
-          <mat-icon>remove</mat-icon>
-        </button>
-        <button mat-icon-button (click)="resetZoom()">
-          <mat-icon>home</mat-icon>
-        </button>
-      </div>
-
-      <div class="scale-container">
-        <span id="scale-info-text" class="scale-info-text">1000 km</span>
-        <div class="scale-bar-container" id="scale-bar-container"></div>
-      </div>
-    </div>
+    <!-- The map container for Leaflet -->
+    <div id="map" class="world-map-container"></div>
 
     <div class="map-menu">
       <mat-button-toggle-group class="display-toggle-group" vertical>
@@ -77,18 +59,18 @@
         </div>
       </div>
 
+      <mat-divider></mat-divider>
+
       <ng-container *ngIf="countryInfo">
         <mat-card appearance="outlined">
           <mat-card-header>
             <mat-card-title>{{ countryInfo?.name["common"] }}</mat-card-title>
             <mat-card-subtitle>{{ countryInfo?.capital }}</mat-card-subtitle>
           </mat-card-header>
-
+          <div class="flag-container">
+            <img [src]="countryInfo?.flags['png']" alt="Flag" />
+          </div>
           <mat-card-content>
-            <div class="flag-container">
-              <img [src]="countryInfo?.flags['png']" alt="Flag" />
-            </div>
-
             <mat-list>
               <mat-list-item>
                 <span matListItemIcon><mat-icon>people</mat-icon></span>
@@ -119,14 +101,22 @@
                 >
               </mat-list-item>
 
-              <mat-list-item>
+              <mat-list-item *ngIf="countryInfo?.currency">
                 <span matListItemIcon
                   ><mat-icon>currency_exchange</mat-icon></span
                 >
                 <span matListItemTitle>Currency</span>
-                <span matListItemLine>{{
-                  countryInfo?.currency["symbol"]
-                }}</span>
+                <span matListItemLine
+                  >{{ countryInfo?.currency["name"] }} ({{
+                    countryInfo?.currency["symbol"]
+                  }})</span
+                >
+              </mat-list-item>
+
+              <mat-list-item *ngIf="countryInfo?.language">
+                <span matListItemIcon><mat-icon>language</mat-icon></span>
+                <span matListItemTitle>Language</span>
+                <span matListItemLine>{{ countryInfo?.language }}</span>
               </mat-list-item>
             </mat-list>
           </mat-card-content>
