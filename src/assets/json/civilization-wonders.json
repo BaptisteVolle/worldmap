@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Great Pyramid of Giza",
+        "type": "Wonder",
+        "game": [
+            "Civ V",
+            "Civ VI"
+        ],
+        "coordinates": [
+            31.1342,
+            29.9792
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "icon": "assets/icons/pyramid.svg",
+        "description": "The Great Pyramid of Giza is the oldest and largest of the pyramids in the Giza pyramid complex."
+    },
+    {
+        "name": "Stonehenge",
+        "type": "Wonder",
+        "game": [
+            "Civ V",
+            "Civ VI"
+        ],
+        "coordinates": [
+            -1.8262,
+            51.1788
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Stonehenge",
+        "icon": "assets/icons/stonehenge.svg",
+        "description": "Prehistoric monument consisting of a ring of standing stones."
+    },
+    {
+        "name": "Great Barrier Reef",
+        "type": "Natural Wonder",
+        "game": [
+            "Civ V",
+            "Civ VI"
+        ],
+        "coordinates": [
+            146.2544,
+            -18.2871
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Great_Barrier_Reef",
+        "icon": "assets/icons/coral.svg",
+        "description": "The world's largest coral reef system composed of over 2,900 individual reefs."
+    }
+]

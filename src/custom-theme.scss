@@ -1,0 +1,98 @@
+// Custom theme definition with your colors
+@use "@angular/material" as mat;
+
+// Define custom primary palette based on #49d49d (green)
+$custom-primary-palette: (
+  50: #e8f8f2,
+  100: #c6eede,
+  200: #a1e3c8,
+  300: #7bd8b1,
+  400: #5fcfa1,
+  500: #49d49d,
+  600: #3ebd8c,
+  700: #31a579,
+  800: #278d67,
+  900: #166446,
+  contrast: (
+    50: rgba(0, 0, 0, 0.87),
+    100: rgba(0, 0, 0, 0.87),
+    200: rgba(0, 0, 0, 0.87),
+    300: rgba(0, 0, 0, 0.87),
+    400: rgba(0, 0, 0, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+// Define custom accent palette based on #95f9e3 (cyan)
+$custom-accent-palette: (
+  50: #ebfefb,
+  100: #cdfcf4,
+  200: #aefaec,
+  300: #95f9e3,
+  400: #70e9d8,
+  500: #4bdbcd,
+  600: #3cbaba,
+  700: #2e97a2,
+  800: #217889,
+  900: #12576a,
+  contrast: (
+    50: rgba(0, 0, 0, 0.87),
+    100: rgba(0, 0, 0, 0.87),
+    200: rgba(0, 0, 0, 0.87),
+    300: rgba(0, 0, 0, 0.87),
+    400: rgba(0, 0, 0, 0.87),
+    500: rgba(0, 0, 0, 0.87),
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+// Create material palettes
+$custom-primary: mat.define-palette($custom-primary-palette, 500);
+$custom-accent: mat.define-palette($custom-accent-palette, 300);
+$custom-warn: mat.define-palette(mat.$red-palette, 700);
+
+// Additional semantic colors
+$custom-info: mat.define-palette(mat.$blue-palette, 600);
+$custom-success: mat.define-palette($custom-primary-palette, 500);
+$custom-warning: mat.define-palette(mat.$amber-palette, 500);
+$custom-error: mat.define-palette(mat.$red-palette, 700);
+
+// Create your custom theme
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $custom-primary,
+      accent: $custom-accent,
+      warn: $custom-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+// Apply the theme to components
+@include mat.all-component-themes($custom-theme);
+
+// Define CSS variables for your semantic colors
+:root {
+  // Primary and accent colors
+  --primary: #{mat.get-color-from-palette($custom-primary)};
+  --primary-lighter: #{mat.get-color-from-palette($custom-primary, 300)};
+  --primary-darker: #{mat.get-color-from-palette($custom-primary, 700)};
+  --accent: #{mat.get-color-from-palette($custom-accent)};
+  --accent-lighter: #{mat.get-color-from-palette($custom-accent, 100)};
+  --accent-darker: #{mat.get-color-from-palette($custom-accent, 700)};
+
+  // Semantic colors
+  --info: #{mat.get-color-from-palette($custom-info)};
+  --success: #{mat.get-color-from-palette($custom-success)};
+  --warning: #{mat.get-color-from-palette($custom-warning)};
+  --error: #{mat.get-color-from-palette($custom-warn)};
+}

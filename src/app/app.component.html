@@ -2,25 +2,43 @@
   <div class="world-map-app-container">
     <div class="world-map-container">
       <!-- Map renders here -->
+
+      <div class="zoom-controls mat-elevation-z2">
+        <button mat-icon-button (click)="zoomIn()">
+          <mat-icon>add</mat-icon>
+        </button>
+        <button mat-icon-button (click)="zoomOut()">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <button mat-icon-button (click)="resetZoom()">
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+
+      <div class="scale-container">
+        <span id="scale-info-text" class="scale-info-text">1000 km</span>
+        <div class="scale-bar-container" id="scale-bar-container"></div>
+      </div>
     </div>
 
-    <div class="map-menu mat-elevation-z4">
-      <h2 class="mat-h2">Color display</h2>
-
+    <div class="map-menu">
       <mat-button-toggle-group class="display-toggle-group" vertical>
         <mat-button-toggle
+          color="primary"
           [checked]="currentAttribute === 'population'"
           (click)="displayColorByAttribute('population')"
         >
           Population
         </mat-button-toggle>
         <mat-button-toggle
+          color="accent"
           [checked]="currentAttribute === 'area'"
           (click)="displayColorByAttribute('area')"
         >
           Area
         </mat-button-toggle>
         <mat-button-toggle
+          color="warn"
           [checked]="currentAttribute === 'density'"
           (click)="displayColorByAttribute('density')"
         >
@@ -36,8 +54,30 @@
 
       <mat-divider></mat-divider>
 
+      <div class="wonder-toggles">
+        <h3>Civilization Wonders</h3>
+        <mat-slide-toggle color="primary" (change)="toggleWonders($event)">
+          Show Wonders
+        </mat-slide-toggle>
+        <div class="wonder-filter" *ngIf="showWonders">
+          <mat-button-toggle-group multiple>
+            <mat-button-toggle
+              [checked]="wonderFilters.includes('Wonder')"
+              (change)="filterWonders('Wonder', $event)"
+            >
+              World Wonders
+            </mat-button-toggle>
+            <mat-button-toggle
+              [checked]="wonderFilters.includes('Natural Wonder')"
+              (change)="filterWonders('Natural Wonder', $event)"
+            >
+              Natural Wonders
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+
       <ng-container *ngIf="countryInfo">
-        <h2 class="mat-h2">Country information</h2>
         <mat-card appearance="outlined">
           <mat-card-header>
             <mat-card-title>{{ countryInfo?.name["common"] }}</mat-card-title>

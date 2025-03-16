@@ -1,45 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "./custom-theme.scss";
 
-
-
-$theme-colors: (
-  "ocean":      #cce4eb,
-  "dark-primary":hsl(215, 35%, 19%), 
-  "primary":    #3D5A80, 
-  "secondary":  #485160,
-  "success":    #198754,
-  "info":       #0dcaf0,
-  "warning":    #ffc107,
-  "danger":     #dc3545,
-  "light":      #f8f9fa,
-  "dark":       #212529,
-  
-  
-);
-
-
-
-@import '../node_modules/bootstrap/scss/bootstrap';
-
-// @import "../node_modules/bootstrap/scss/functions";
-// @import "../node_modules/bootstrap/scss/variables";
-
-
-html, body { height: 100%; }
-body { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif;
- }
-
- .current-project-title {
-  text-align:center
+// Additional theme utility classes
+.color-primary {
+  color: var(--primary);
+}
+.color-accent {
+  color: var(--accent);
+}
+.color-warn {
+  color: var(--error);
+}
+.color-info {
+  color: var(--info);
+}
+.color-success {
+  color: var(--success);
+}
+.color-warning {
+  color: var(--warning);
 }
 
-.current-project-title h1 { 
-  color: #212529;
-  margin-top: 20px;
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+.bg-warn {
+  background-color: var(--error);
+}
+.bg-info {
+  background-color: var(--info);
+}
+.bg-success {
+  background-color: var(--success);
+}
+.bg-warning {
+  background-color: var(--warning);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -13,6 +13,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,7 @@ import { MatTableModule } from '@angular/material/table';
     MatGridListModule,
     MatIconModule,
     MatTableModule,
+    MatSlideToggleModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -39,26 +41,35 @@ export class AppComponent implements OnInit {
   isShowing = false;
   allCountriesNameList = [];
 
-  //@ViewChild('input') input: ElementRef<HTMLInputElement>;
   countryControl = new FormControl('');
   options: string[] = this.allCountriesNameList;
   currentAttribute: string = '';
+  private mapZoom: any;
+  wonders: any[] = [];
+  showWonders: boolean = false;
+  wonderFilters: string[] = ['Wonder', 'Natural Wonder'];
+  mapProjection: any;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.drawMap();
+    this.loadWonders();
+  }
+
+  loadWonders() {
+    this.http
+      .get('assets/json/civilization-wonders.json')
+      .subscribe((data: any) => {
+        this.wonders = data;
+      });
   }
 
   drawMap() {
-    console.log('before', typeof window);
     if (typeof window !== 'undefined') {
-      console.log('after', typeof window);
-
       this.http
         .get('assets/json/world-geo.json')
         .subscribe((worldData: any) => {
-          console.log(worldData);
           for (let i = 0; i < worldData.features.length; i++) {
             let currentCountryName: string =
               worldData.features[i].properties.name;
@@ -80,7 +91,8 @@ export class AppComponent implements OnInit {
             .center([-10, 0])
             .translate([viewBoxWidth / 2, viewBoxHeight / 1.55]);
 
-          // Créer un chemin pour chaque pays
+          this.mapProjection = projection;
+
           const path: d3.GeoPath<any, any> = d3
             .geoPath()
             .projection(projection);
@@ -95,7 +107,36 @@ export class AppComponent implements OnInit {
             .style('display', 'block')
             .style('margin', 'auto');
 
-          svg
+          const mapGroup = svg.append('g').attr('class', 'map-group');
+
+          const zoom = d3
+            .zoom()
+            .scaleExtent([1, 8])
+            .filter((event) => {
+              return (
+                !event.ctrlKey && !event.button && event.type !== 'dblclick'
+              );
+            })
+
+            .on('zoom', (event) => {
+              mapGroup.attr('transform', event.transform);
+              this.updateScaleBar(svg, projection, event.transform);
+            });
+
+          svg.call(zoom);
+
+          this.mapZoom = zoom;
+
+          svg.on('dblclick.zoom', null);
+          svg.on('dblclick', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            this.resetZoom();
+          });
+
+          svg.call(this.mapZoom);
+
+          mapGroup
             .selectAll('path')
             .data(worldData.features)
             .enter()
@@ -107,7 +148,7 @@ export class AppComponent implements OnInit {
             .attr('stroke', '#000000');
 
           const tooltip = this.addTooltip(svg);
-          let allCountries = svg.selectAll('path');
+          let allCountries = mapGroup.selectAll('path');
 
           allCountries
             .on('mouseover', (e, d: Object) => {
@@ -257,7 +298,7 @@ export class AppComponent implements OnInit {
   }
 
   clearSelection() {
-    this.countryControl.setValue(''); // Vider le sélecteur en définissant sa valeur sur une chaîne vide
+    this.countryControl.setValue('');
     this.clearSelectedCountry();
   }
 
@@ -360,7 +401,7 @@ export class AppComponent implements OnInit {
     const legendHeight = 20;
     const legendX = 20;
     const legendY = 30;
-    let unit;
+    let unit: string = '';
 
     switch (attribute) {
       case 'population':
@@ -376,21 +417,12 @@ export class AppComponent implements OnInit {
         unit = 'Continents';
         break;
     }
-
-    // Delete alls previous legends
     d3.selectAll('.legend').remove();
 
     const legend = svg
       .append('g')
       .attr('class', 'legend')
       .attr('transform', `translate(${legendX}, ${legendY})`);
-
-    const legendTitle = legend
-      .append('text')
-      .attr('x', 0)
-      .attr('y', -10)
-      .text(`${unit}`)
-      .attr('font-weight', 'bold');
 
     const legendItems = legend
       .selectAll('.legend-item')
@@ -434,5 +466,195 @@ export class AppComponent implements OnInit {
           }
         }
       });
+  }
+
+  createScaleBar(svg: any, projection: any) {
+    this.updateScaleBar(svg, projection, d3.zoomIdentity);
+  }
+
+  updateScaleBar(svg: any, projection: any, transform: any) {
+    const scale = transform.k;
+
+    let distance: number;
+    let unit: string;
+
+    if (scale <= 1) {
+      distance = 1000;
+      unit = '1000 km';
+    } else if (scale <= 2) {
+      distance = 500;
+      unit = '500 km';
+    } else if (scale <= 4) {
+      distance = 100;
+      unit = '100 km';
+    } else {
+      distance = 50;
+      unit = '50 km';
+    }
+
+    const point1 = projection([0, 0]);
+    const point2 = projection([distance / 111.32, 0]); // Convert km to degrees
+    let barLength = Math.abs(point2[0] - point1[0]) * transform.k;
+
+    if (barLength > 150) {
+      const ratio = 150 / barLength;
+      barLength = 150;
+      distance = Math.round(distance * ratio);
+      unit = `${distance} km`;
+    }
+
+    const container = document.getElementById('scale-bar-container');
+    if (container) {
+      container.innerHTML = '';
+
+      const scaleSvg = d3
+        .select('#scale-bar-container')
+        .append('svg')
+        .attr('width', barLength + 2)
+        .attr('height', 20);
+
+      scaleSvg
+        .append('rect')
+        .attr('x', 1)
+        .attr('y', 10)
+        .attr('width', barLength)
+        .attr('height', 3)
+        .attr('fill', 'black');
+
+      scaleSvg
+        .append('rect')
+        .attr('x', 1)
+        .attr('y', 5)
+        .attr('width', 1)
+        .attr('height', 13)
+        .attr('fill', 'black');
+
+      scaleSvg
+        .append('rect')
+        .attr('x', barLength)
+        .attr('y', 5)
+        .attr('width', 1)
+        .attr('height', 13)
+        .attr('fill', 'black');
+    }
+
+    const scaleText = document.getElementById('scale-info-text');
+    if (scaleText) {
+      scaleText.textContent = unit;
+    }
+  }
+
+  zoomIn() {
+    const svg = d3.select('.world-map-container svg');
+
+    if (svg.empty() || !this.mapZoom) return;
+
+    svg.transition().duration(300).call(this.mapZoom.scaleBy, 1.5);
+  }
+
+  zoomOut() {
+    const svg = d3.select('.world-map-container svg');
+    if (svg.empty() || !this.mapZoom) return;
+
+    svg.transition().duration(300).call(this.mapZoom.scaleBy, 0.67);
+  }
+
+  resetZoom() {
+    const svg = d3.select('.world-map-container svg');
+    if (svg.empty() || !this.mapZoom) return;
+
+    svg
+      .transition()
+      .duration(500)
+      .call(this.mapZoom.transform, d3.zoomIdentity);
+  }
+
+  // Civ Wonders part
+  toggleWonders(event: any) {
+    this.showWonders = event.checked;
+    if (this.showWonders) {
+      this.displayWonders();
+    } else {
+      this.removeWonders();
+    }
+  }
+
+  filterWonders(type: string, event: any) {
+    if (event.source.checked) {
+      this.wonderFilters.push(type);
+    } else {
+      this.wonderFilters = this.wonderFilters.filter((t) => t !== type);
+    }
+
+    this.removeWonders();
+    if (this.showWonders) {
+      this.displayWonders();
+    }
+  }
+
+  displayWonders() {
+    const svg = d3.select('.world-map-container svg');
+    const mapGroup = svg.select('.map-group');
+    const projection = this.getCurrentProjection();
+
+    if (!projection || !mapGroup) return;
+
+    mapGroup.selectAll('.wonder-marker').remove();
+
+    const filteredWonders = this.wonders.filter((w) =>
+      this.wonderFilters.includes(w.type)
+    );
+
+    const wonderMarkers = mapGroup
+      .selectAll('.wonder-marker')
+      .data(filteredWonders)
+      .enter()
+      .append('g')
+      .attr('class', 'wonder-marker')
+      .attr('transform', (d) => {
+        const coords = projection([d.coordinates[0], d.coordinates[1]]);
+        return `translate(${coords[0]},${coords[1]})`;
+      });
+
+    wonderMarkers
+      .append('circle')
+      .attr('r', 5)
+      .attr('fill', (d) => (d.type === 'Wonder' ? '#FFD700' : '#00FF00'))
+      .attr('stroke', '#000')
+      .attr('stroke-width', 1)
+      .style('cursor', 'pointer');
+
+    wonderMarkers
+      .append('text')
+      .attr('x', 8)
+      .attr('y', 4)
+      .text((d) => d.name)
+      .attr('font-size', '10px')
+      .attr('fill', '#000')
+      .attr('stroke', '#000')
+      .attr('stroke-width', 0.5)
+      .style('pointer-events', 'none');
+
+    wonderMarkers
+      .style('cursor', 'pointer')
+      .on('click', (event, d) => {
+        window.open(d.wikipedia, '_blank');
+      })
+      .on('mouseover', function () {
+        d3.select(this).select('circle').attr('r', 7);
+      })
+      .on('mouseout', function () {
+        d3.select(this).select('circle').attr('r', 5);
+      });
+  }
+
+  removeWonders() {
+    const svg = d3.select('.world-map-container svg');
+    svg.selectAll('.wonder-marker').remove();
+  }
+
+  // Helper method to get current projection
+  getCurrentProjection() {
+    return this.mapProjection;
   }
 }
