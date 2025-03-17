@@ -40,8 +40,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 })
 export class AppComponent implements OnInit {
   private map: any; // Change from L.Map to any
-  private vectorTileLayer: any; // Add vector tile layer
-  private countryStyles: { [key: string]: L.PathOptions } = {};
+  private geojsonLayer: any; // Add this property for the GeoJSON layer
   private selectedCountry: any;
   private wonderMarkers: any;
   private L: any; // Will store Leaflet when in browser
@@ -69,10 +68,8 @@ export class AppComponent implements OnInit {
       // Import Leaflet dynamically when in browser
       import('leaflet').then((L) => {
         this.L = L;
-        import('leaflet.vectorgrid').then(() => {
-          this.initMap();
-          this.loadCountries();
-        });
+        this.initMap();
+        this.loadCountries();
       });
     }
 
@@ -83,19 +80,25 @@ export class AppComponent implements OnInit {
   private initMap(): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    // Create the Leaflet map - use this.L instead of L
+    // Create the Leaflet map with improved antimeridian handling
     this.map = this.L.map('map', {
       center: [20, 0],
       zoom: 2,
       minZoom: 1,
       maxZoom: 8,
       zoomControl: false,
-      worldCopyJump: true, // Add this to prevent weird line artifacts
+      worldCopyJump: true,
+      maxBounds: [
+        [-90, -180],
+        [90, 180],
+      ],
+      maxBoundsViscosity: 1.0,
+      renderer: this.L.canvas({ padding: 0.5, tolerance: 5 }), // Use canvas renderer for better polygon handling
     });
 
     this.wonderMarkers = this.L.layerGroup();
 
-    // Add a base map layer
+    // Use a different tile layer that handles the date line better
     this.L.tileLayer(
       'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',
       {
@@ -103,7 +106,11 @@ export class AppComponent implements OnInit {
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20,
-        noWrap: false,
+        noWrap: true, // Changed to true to prevent tile wrapping
+        bounds: [
+          [-90, -180],
+          [90, 180],
+        ],
       }
     ).addTo(this.map);
 
@@ -137,51 +144,157 @@ export class AppComponent implements OnInit {
   private loadCountries(): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    import('leaflet.vectorgrid').then(() => {
-      this.vectorTileLayer = this.L.vectorGrid
-        .protobuf('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pbf', {
-          vectorTileLayerStyles: {
-            countries: (properties, zoom) => {
-              console.log('Vector tile properties:', properties);
+    // Use your local GeoJSON file
+    this.http.get('assets/json/world-geo.json').subscribe((worldData: any) => {
+      this.allCountriesNameList = worldData.features.map(
+        (feature: any) => feature.properties.name
+      );
 
-              const style = this.countryStyles[properties.name] || {
-                weight: 1,
-                color: '#000',
-                opacity: 1,
-                fillOpacity: 0.7,
-                fillColor: '#ccc',
-              };
-              return style;
+      // Fix antimeridian crossing issue
+      const fixedData = this.fixAntimeridianCrossing(worldData);
+
+      // Create and add GeoJSON layer with improved options
+      this.geojsonLayer = this.L.geoJSON(fixedData, {
+        style: () => ({
+          weight: 1,
+          color: '#000',
+          opacity: 1,
+          fillOpacity: 0.7,
+          fillColor: '#ccc',
+          stroke: true,
+          fill: true,
+        }),
+        // New smoothFactor option to improve rendering:
+        smoothFactor: 0.5,
+        onEachFeature: (feature, layer) => {
+          // Add tooltips for countries
+          const countryName = feature.properties.name;
+          layer.bindTooltip(countryName, {
+            permanent: false,
+            direction: 'center',
+            className: 'country-tooltip',
+          });
+
+          layer.on({
+            mouseover: (e) => {
+              const l = e.target;
+
+              // Store the current fill color to preserve it
+              const currentFillColor = l.options.fillColor;
+
+              // Only modify border properties, not the fill
+              l.setStyle({
+                weight: 2,
+                color: '#666',
+                // Keep the original fill color
+                fillColor: currentFillColor,
+              });
+
+              l.bringToFront();
             },
-          },
-          interactive: true,
-          getFeatureId: (feature) => feature.properties.name,
-        })
-        .addTo(this.map);
-
-      this.vectorTileLayer.on('click', (e) => {
-        const country = e.layer.properties.name;
-        this.selectCountry(country, e.layer);
-      });
-
-      this.vectorTileLayer.on('mouseover', (e) => {
-        const layer = e.layer;
-        layer.setStyle({
-          weight: 2,
-          color: '#666',
-        });
-        layer.bringToFront();
-      });
-
-      this.vectorTileLayer.on('mouseout', (e) => {
-        if (this.selectedCountry !== e.layer) {
-          this.vectorTileLayer.resetFeatureStyle(e.layer);
-        }
-      });
+            mouseout: (e) => {
+              if (this.selectedCountry !== e.target) {
+                // Don't use resetStyle as it removes custom colors
+                e.target.setStyle({
+                  weight: 1,
+                  color: '#000',
+                  // fillColor remains unchanged
+                });
+              }
+            },
+            click: (e) => {
+              const country = e.target.feature.properties.name;
+              this.selectCountry(country, e.target);
+            },
+          });
+        },
+      }).addTo(this.map);
 
       // Set initial coloring
       this.displayColorByAttribute('population');
     });
+  }
+
+  // New method to fix the antimeridian crossing issue
+  private fixAntimeridianCrossing(geojsonData: any): any {
+    // Create a deep copy to avoid modifying the original
+    const fixedData = JSON.parse(JSON.stringify(geojsonData));
+
+    // Process each feature
+    fixedData.features.forEach((feature: any) => {
+      // Add a property to indicate this feature crosses the dateline
+      let crossesDateLine = false;
+
+      if (feature.geometry.type === 'Polygon') {
+        feature.geometry.coordinates = feature.geometry.coordinates.map(
+          (ring: any) => this.fixCoordinates(ring, feature.properties.name)
+        );
+      } else if (feature.geometry.type === 'MultiPolygon') {
+        feature.geometry.coordinates = feature.geometry.coordinates.map(
+          (polygon: any) =>
+            polygon.map((ring: any) =>
+              this.fixCoordinates(ring, feature.properties.name)
+            )
+        );
+      }
+    });
+
+    return fixedData;
+  }
+
+  private fixCoordinates(coordinates: any[], countryName?: string): any[] {
+    if (!coordinates || coordinates.length < 2) return coordinates;
+
+    // Special case for countries that need special treatment
+    const troubleCountries = [
+      'Russia',
+      'Fiji',
+      'New Zealand',
+      'United States',
+      'Kiribati',
+    ];
+
+    // Create a new array to store the fixed coordinates
+    const fixedCoordinates = [...coordinates];
+
+    // First pass: detect if polygon actually crosses the antimeridian
+    let crossesAntimeridian = false;
+    for (let i = 0; i < coordinates.length - 1; i++) {
+      const [lon1, lat1] = coordinates[i];
+      const [lon2, lat2] = coordinates[i + 1];
+
+      if (Math.abs(lon1 - lon2) > 180) {
+        crossesAntimeridian = true;
+        break;
+      }
+    }
+
+    // If it crosses the antimeridian, use a different approach based on country
+    if (crossesAntimeridian && troubleCountries.includes(countryName)) {
+      // For these specific countries, add 360 to all negative coordinates to keep them on one side
+      for (let i = 0; i < fixedCoordinates.length; i++) {
+        if (fixedCoordinates[i][0] < 0) {
+          fixedCoordinates[i][0] += 360;
+        }
+      }
+      return fixedCoordinates;
+    }
+
+    // For other cases, fix each crossing individually
+    for (let i = 0; i < fixedCoordinates.length - 1; i++) {
+      const [lon1, lat1] = fixedCoordinates[i];
+      const [lon2, lat2] = fixedCoordinates[i + 1];
+
+      if (Math.abs(lon1 - lon2) > 180) {
+        if (lon1 < 0) {
+          fixedCoordinates[i][0] += 360;
+        } else {
+          fixedCoordinates[i][0] -= 360;
+        }
+      }
+    }
+
+    return fixedCoordinates;
   }
 
   loadWonders(): void {
@@ -198,13 +311,9 @@ export class AppComponent implements OnInit {
     this.http
       .get('https://restcountries.com/v3.1/all')
       .subscribe((data: any[]) => {
-        // Create color scale using d3
-
-        console.log('REST Countries API data:', data);
-
         const colorScale = this.createColorScale(attribute);
+        const countryStyles = {};
 
-        // Map country data to style definitions
         data.forEach((country) => {
           let currentAttribute = country[attribute];
 
@@ -216,39 +325,26 @@ export class AppComponent implements OnInit {
             currentAttribute = currentAttribute[0];
           }
 
-          // Store the style for this country
-          const countryName = country.name.official;
-          const commonName = country.name.common;
+          const countryName = country.name.common;
+          const countryCode = country.cca3;
+          const fillColor = colorScale(currentAttribute);
 
-          const style = {
-            fillColor: colorScale(currentAttribute),
-          };
-
-          this.countryStyles[countryName] = style;
-          this.countryStyles[commonName] = style;
+          countryStyles[countryName] = { fillColor };
+          if (countryCode) countryStyles[countryCode] = { fillColor };
         });
 
-        // Apply the styles to the map
-        this.refreshCountryStyles();
+        // Apply styles to each country in the GeoJSON layer
+        this.geojsonLayer.eachLayer((layer: any) => {
+          const countryName = layer.feature.properties.name;
+          const style = countryStyles[countryName];
 
-        // Add a legend to the map
+          if (style) {
+            layer.setStyle(style);
+          }
+        });
+
         this.addLegend(colorScale, attribute);
       });
-  }
-
-  private refreshCountryStyles(): void {
-    if (this.vectorTileLayer) {
-      this.vectorTileLayer.setFeatureStyle((feature) => {
-        const countryName = feature.properties.name;
-        const style = this.countryStyles[countryName];
-        console.log('Applying style for country:', countryName, style);
-
-        if (style) {
-          return style;
-        }
-        return {};
-      });
-    }
   }
 
   createColorScale(attribute: string): any {
@@ -395,7 +491,7 @@ export class AppComponent implements OnInit {
   selectCountry(countryName: string, layer?: any): void {
     // Reset previously selected country
     if (this.selectedCountry) {
-      this.vectorTileLayer.resetFeatureStyle(this.selectedCountry);
+      this.geojsonLayer.resetStyle(this.selectedCountry);
     }
 
     // Set new selected country
@@ -443,7 +539,7 @@ export class AppComponent implements OnInit {
 
     // Deselect on the map
     if (this.selectedCountry) {
-      this.vectorTileLayer.resetFeatureStyle(this.selectedCountry);
+      this.geojsonLayer.resetStyle(this.selectedCountry);
       this.selectedCountry = null;
     }
   }
@@ -525,8 +621,8 @@ export class AppComponent implements OnInit {
   zoomToCountry(countryName: string): void {
     let found = false;
 
-    if (this.vectorTileLayer) {
-      this.vectorTileLayer.eachLayer((layer: any) => {
+    if (this.geojsonLayer) {
+      this.geojsonLayer.eachLayer((layer: any) => {
         if (!found && layer.feature.properties.name === countryName) {
           found = true;
           this.map.fitBounds(layer.getBounds());

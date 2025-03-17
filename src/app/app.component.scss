@@ -199,3 +199,48 @@ mat-list-item {
 .leaflet-control-container {
   z-index: 1000; // Ensure controls stay on top
 }
+
+// Add these at the end of your file
+
+.leaflet-container {
+  background: #f5f5f5; // Match your app background
+}
+
+// Fix the antimeridian issue visually
+.leaflet-tile-container {
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+// Add these at the end of your file
+
+// Prevent dateline artifacts
+.leaflet-container {
+  background: #f5f5f5;
+}
+
+.leaflet-tile-container img {
+  border: 0px solid transparent !important;
+}
+
+// Hide any overflow at the edges
+.leaflet-tile-pane {
+  clip-path: inset(-5px -5px -5px -5px);
+}
+
+// Improve polygon rendering
+.leaflet-interactive {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  fill-rule: evenodd;
+}
+
+.country-tooltip {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
