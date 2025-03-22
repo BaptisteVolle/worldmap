@@ -71,6 +71,11 @@ export class AppComponent implements OnInit {
         this.initMap();
         this.loadCountries();
       });
+
+      // Trigger a resize event after the map is initialized
+      setTimeout(() => {
+        window.dispatchEvent(new Event('resize'));
+      }, 100);
     }
 
     // This can safely run on server or client
@@ -129,16 +134,27 @@ export class AppComponent implements OnInit {
       })
       .addTo(this.map);
 
+    // Add a more robust resize handler
+    const resizeMap = () => {
+      // Force Leaflet to recognize container size changes
+      this.map.invalidateSize({ animate: true });
+    };
+
+    // Set up resize observer for more reliable size detection
+    if (typeof ResizeObserver !== 'undefined') {
+      const ro = new ResizeObserver(() => {
+        resizeMap();
+      });
+      ro.observe(document.getElementById('map'));
+    }
+
+    // Also listen for window resize events
     window.addEventListener('resize', () => {
-      setTimeout(() => {
-        this.map.invalidateSize();
-      }, 0);
+      resizeMap();
     });
 
-    // Also trigger a size update after map initialization
-    setTimeout(() => {
-      this.map.invalidateSize();
-    }, 200);
+    // Initial size adjustment after a short delay
+    setTimeout(resizeMap, 500);
   }
 
   private loadCountries(): void {
@@ -413,10 +429,17 @@ export class AppComponent implements OnInit {
 
     legend.onAdd = () => {
       const div = this.L.DomUtil.create('div', 'info legend');
-      const domain = colorScale.domain();
-      let labels = [];
+      // Apply base styles directly to the container
+      div.style.padding = '10px';
+      div.style.background = 'rgba(255, 255, 255, 0.9)';
+      div.style.boxShadow = '0 0 15px rgba(0, 0, 0, 0.2)';
+      div.style.borderRadius = '5px';
+      div.style.lineHeight = '1.5';
 
-      // Add title
+      const domain = colorScale.domain();
+      let legendContent = '';
+
+      // Add title with inline styles
       let title = '';
       switch (attribute) {
         case 'population':
@@ -433,15 +456,19 @@ export class AppComponent implements OnInit {
           break;
       }
 
-      div.innerHTML = `<h4>${title}</h4>`;
+      legendContent = `<h4 style="margin: 0 0 10px; font-weight: bold;">${title}</h4>`;
 
-      // Generate legend items
+      // Generate legend items with inline styles
       if (attribute === 'continents') {
         // Categorical legend
-        domain.forEach((continent: string, i: number) => {
-          labels.push(
-            `<i style="background:${colorScale(continent)}"></i> ${continent}`
-          );
+        domain.forEach((continent: string) => {
+          legendContent += `
+            <div style="margin-bottom: 5px; display: flex; align-items: center; white-space: nowrap;">
+              <span style="display: inline-block; width: 18px; height: 18px; margin-right: 8px; border: 1px solid rgba(0, 0, 0, 0.2); background-color: ${colorScale(
+                continent
+              )};"></span>
+              ${continent}
+            </div>`;
         });
       } else {
         // Numerical legend
@@ -459,11 +486,13 @@ export class AppComponent implements OnInit {
               ? `${(to / 1000000).toLocaleString()}M`
               : to.toLocaleString();
 
-          labels.push(
-            `<i style="background:${colorScale(to)}"></i> ${
-              i === 0 ? '< ' + formatTo : formatFrom + ' - ' + formatTo
-            }`
-          );
+          legendContent += `
+            <div style="margin-bottom: 5px; display: flex; align-items: center; white-space: nowrap;">
+              <span style="display: inline-block; width: 18px; height: 18px; margin-right: 8px; border: 1px solid rgba(0, 0, 0, 0.2); background-color: ${colorScale(
+                to
+              )};"></span>
+              ${i === 0 ? '< ' + formatTo : formatFrom + ' - ' + formatTo}
+            </div>`;
         }
 
         // Add the last category
@@ -473,14 +502,15 @@ export class AppComponent implements OnInit {
             ? `${(lastValue / 1000000).toLocaleString()}M`
             : lastValue.toLocaleString();
 
-        labels.push(
-          `<i style="background:${colorScale(
+        legendContent += `<div style="margin-bottom: 5px; display: flex; align-items: center; white-space: nowrap;">
+          <span style="display: inline-block; width: 18px; height: 18px; margin-right: 8px; border: 1px solid rgba(0, 0, 0, 0.2); background-color: ${colorScale(
             Infinity
-          )}"></i> > ${formattedValue}`
-        );
+          )};"></span>
+          > ${formattedValue}
+        </div>`;
       }
 
-      div.innerHTML += labels.join('<br>');
+      div.innerHTML = legendContent;
       return div;
     };
 
