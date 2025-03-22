@@ -1,51 +1,50 @@
+/* Base layout containers */
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 100vh; // Use viewport height
+  height: 100vh;
   width: 100%;
-}
-
-.world-map-container {
-  flex: 1;
-  height: 100%;
-  position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: #f5f5f5;
-  overflow: hidden;
-  min-height: 500px; // Add a minimum height
 }
 
 .world-map-app-container {
   display: flex;
+  flex-direction: row;
   flex: 1;
-  border-radius: 4px;
-  margin: 8px;
+  height: calc(100vh - 16px);
   overflow: hidden;
-  height: calc(100vh - 16px); // Ensure proper height
-  min-height: 500px; // Add minimum height
 }
 
+/* Map elements */
+.world-map-container {
+  flex: 1;
+  position: relative;
+  background-color: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Side panel */
 .map-menu {
-  width: 350px;
+  width: 300px;
   padding: 16px;
   overflow-y: auto;
   overflow-x: hidden;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
-.legend-item {
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-}
-
-.legend-color-box {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  margin-right: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-/* Position the Leaflet zoom controls */
+/* Leaflet control positioning */
 .leaflet-control-zoom {
   margin-bottom: 40px !important;
   margin-right: 20px !important;
@@ -55,54 +54,7 @@
   margin-bottom: 20px !important;
 }
 
-.leaflet-bottom.leaflet-center {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.display-toggle-group {
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-mat-divider {
-  margin: 16px 0;
-}
-
-.flag-container {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-
-  img {
-    max-width: 200px;
-    max-height: 120px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.selected-country {
-  stroke-width: 2px;
-}
-
-.full-width {
-  width: 100%;
-}
-
-mat-card {
-  margin-bottom: 16px;
-}
-
-mat-card-header {
-  padding-bottom: 8px;
-}
-
-mat-list-item {
-  height: auto !important;
-  padding: 4px 0;
-}
-
+/* Wonder tooltips and popups */
 .wonder-tooltip {
   font-size: 14px;
   background-color: white;
@@ -114,6 +66,12 @@ mat-list-item {
   z-index: 1000;
 }
 
+.wonder-popup h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* Control panel elements */
 .wonder-toggles {
   margin: 16px 0;
 
@@ -122,76 +80,69 @@ mat-list-item {
   }
 
   .wonder-filter {
-    margin-top: 8px;
+    margin-top: 16px;
 
     .mat-button-toggle-group {
       width: 100%;
+      display: flex;
+
+      .mat-button-toggle {
+        flex: 1;
+        text-align: center;
+      }
     }
   }
 }
 
-.leaflet-bottom.leaflet-center {
-  width: 100%;
-  text-align: center;
-  left: 0;
-  right: 0;
-  pointer-events: none;
+.wonder-popup {
+  min-width: 250px;
+  max-width: 300px;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+  }
+
+  .wonder-quote {
+    font-style: italic;
+    border-left: 3px solid #ddd;
+    margin: 10px 0;
+    padding: 5px 0 5px 10px;
+
+    footer {
+      font-size: 0.9em;
+      text-align: right;
+      margin-top: 5px;
+    }
+  }
+
+  .wonder-links {
+    margin-top: 10px;
+    text-align: right;
+
+    a {
+      color: #0078a8;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
-.leaflet-control-scale {
-  margin-bottom: 20px !important;
-  pointer-events: auto;
-  display: inline-block;
-  float: none !important;
+mat-divider {
+  margin: 16px 0;
 }
 
-// Add this to hide antimeridian artifacts
-.leaflet-tile-pane {
-  clip-path: inset(0 0 0 0); // This helps hide some rendering artifacts
+.info-card {
+  margin-top: 16px;
 }
 
-.leaflet-control-container {
-  z-index: 1000; // Ensure controls stay on top
-}
-
+/* Ensure Leaflet container fills available space */
 .leaflet-container {
   height: 100% !important;
   width: 100% !important;
-}
-
-#map {
-  width: 100%;
-  height: 100%;
-}
-
-// Fix the antimeridian issue visually
-.leaflet-tile-container {
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-}
-
-.leaflet-tile-container img {
-  border: 0px solid transparent !important;
-}
-
-// Hide any overflow at the edges
-.leaflet-tile-pane {
-  clip-path: inset(-5px -5px -5px -5px);
-}
-
-// Improve polygon rendering
-.leaflet-interactive {
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  fill-rule: evenodd;
-}
-
-.country-tooltip {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #333;
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 14px;
-  font-weight: bold;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }

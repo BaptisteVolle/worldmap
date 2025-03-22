@@ -1,47 +1,21 @@
 <div class="app-container">
   <div class="world-map-app-container">
-    <!-- The map container for Leaflet -->
-    <div id="map" class="world-map-container"></div>
-
+    <!-- Left side menu -->
     <div class="map-menu">
-      <mat-button-toggle-group class="display-toggle-group" vertical>
-        <mat-button-toggle
-          color="primary"
-          [checked]="currentAttribute === 'population'"
-          (click)="displayColorByAttribute('population')"
-        >
-          Population
-        </mat-button-toggle>
-        <mat-button-toggle
-          color="accent"
-          [checked]="currentAttribute === 'area'"
-          (click)="displayColorByAttribute('area')"
-        >
-          Area
-        </mat-button-toggle>
-        <mat-button-toggle
-          color="warn"
-          [checked]="currentAttribute === 'density'"
-          (click)="displayColorByAttribute('density')"
-        >
-          Density
-        </mat-button-toggle>
-        <mat-button-toggle
-          [checked]="currentAttribute === 'continents'"
-          (click)="displayColorByAttribute('continents')"
-        >
-          Continents
-        </mat-button-toggle>
-      </mat-button-toggle-group>
+      <h2>Civilization Wonders Map</h2>
 
       <mat-divider></mat-divider>
 
       <div class="wonder-toggles">
         <h3>Civilization Wonders</h3>
-        <mat-slide-toggle color="primary" (change)="toggleWonders($event)">
+        <mat-slide-toggle
+          color="primary"
+          [checked]="showWonders"
+          (change)="toggleWonders($event)"
+        >
           Show Wonders
         </mat-slide-toggle>
-        <div class="wonder-filter" *ngIf="showWonders">
+        <div class="wonder-filter">
           <mat-button-toggle-group multiple>
             <mat-button-toggle
               [checked]="wonderFilters.includes('Wonder')"
@@ -57,71 +31,52 @@
             </mat-button-toggle>
           </mat-button-toggle-group>
         </div>
+
+        <div class="wonder-filter">
+          <h4>Filter by Game:</h4>
+          <mat-button-toggle-group multiple>
+            <mat-button-toggle
+              [checked]="gameFilters.includes('Civ V')"
+              (change)="filterByGame('Civ V', $event)"
+            >
+              Civilization V
+            </mat-button-toggle>
+            <mat-button-toggle
+              [checked]="gameFilters.includes('Civ VI')"
+              (change)="filterByGame('Civ VI', $event)"
+            >
+              Civilization VI
+            </mat-button-toggle>
+            <mat-button-toggle
+              [checked]="gameFilters.includes('Civ VII')"
+              (change)="filterByGame('Civ VII', $event)"
+            >
+              Civilization VII
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
       </div>
 
       <mat-divider></mat-divider>
 
-      <ng-container *ngIf="countryInfo">
-        <mat-card appearance="outlined">
-          <mat-card-header>
-            <mat-card-title>{{ countryInfo?.name["common"] }}</mat-card-title>
-            <mat-card-subtitle>{{ countryInfo?.capital }}</mat-card-subtitle>
-          </mat-card-header>
-          <div class="flag-container">
-            <img [src]="countryInfo?.flags['png']" alt="Flag" />
-          </div>
-          <mat-card-content>
-            <mat-list>
-              <mat-list-item>
-                <span matListItemIcon><mat-icon>people</mat-icon></span>
-                <span matListItemTitle>Population</span>
-                <span matListItemLine>{{
-                  countryInfo?.population.toLocaleString()
-                }}</span>
-              </mat-list-item>
+      <mat-card appearance="outlined" class="info-card">
+        <mat-card-header>
+          <mat-card-title>About This Map</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            This map displays the locations of wonders from the Civilization
+            game series.
+          </p>
+          <p>Use the toggles above to filter between different wonder types.</p>
+          <p>Click on any wonder marker to see more details about it.</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
 
-              <mat-list-item>
-                <span matListItemIcon><mat-icon>map</mat-icon></span>
-                <span matListItemTitle>Area</span>
-                <span matListItemLine
-                  >{{ countryInfo?.area.toLocaleString() }} km²</span
-                >
-              </mat-list-item>
-
-              <mat-list-item>
-                <span matListItemIcon><mat-icon>people_outline</mat-icon></span>
-                <span matListItemTitle>Population Density</span>
-                <span matListItemLine
-                  >{{
-                    (
-                      countryInfo?.population / countryInfo?.area
-                    ).toLocaleString()
-                  }}
-                  people/km²</span
-                >
-              </mat-list-item>
-
-              <mat-list-item *ngIf="countryInfo?.currency">
-                <span matListItemIcon
-                  ><mat-icon>currency_exchange</mat-icon></span
-                >
-                <span matListItemTitle>Currency</span>
-                <span matListItemLine
-                  >{{ countryInfo?.currency["name"] }} ({{
-                    countryInfo?.currency["symbol"]
-                  }})</span
-                >
-              </mat-list-item>
-
-              <mat-list-item *ngIf="countryInfo?.language">
-                <span matListItemIcon><mat-icon>language</mat-icon></span>
-                <span matListItemTitle>Language</span>
-                <span matListItemLine>{{ countryInfo?.language }}</span>
-              </mat-list-item>
-            </mat-list>
-          </mat-card-content>
-        </mat-card>
-      </ng-container>
+    <!-- Map container -->
+    <div class="world-map-container">
+      <div id="map"></div>
     </div>
   </div>
 </div>
