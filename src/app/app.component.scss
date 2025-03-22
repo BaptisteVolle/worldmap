@@ -5,11 +5,6 @@
   width: 100%;
 }
 
-.header {
-  padding: 16px;
-  text-align: center;
-}
-
 .world-map-container {
   flex: 1;
   height: 100%;
@@ -37,20 +32,6 @@
   overflow-x: hidden;
 }
 
-.info.legend {
-  padding: 10px;
-  background: white;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  line-height: 1.5;
-}
-
-.info.legend h4 {
-  margin: 0 0 10px;
-  font-weight: bold;
-}
-
 .legend-item {
   margin-bottom: 5px;
   display: flex;
@@ -70,7 +51,6 @@
   margin-right: 20px !important;
 }
 
-/* Position the Leaflet scale */
 .leaflet-control-scale {
   margin-bottom: 20px !important;
 }
@@ -121,40 +101,6 @@ mat-card-header {
 mat-list-item {
   height: auto !important;
   padding: 4px 0;
-}
-
-.zoom-controls {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: white;
-  border-radius: 4px;
-  padding: 4px;
-  display: flex;
-  flex-direction: column;
-}
-
-.scale-container {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%); //
-  display: flex;
-  flex-direction: row;
-
-  .scale-bar-container {
-    height: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .scale-info-text {
-    font-size: 12px;
-    margin-top: 4px;
-    width: 70px;
-    min-width: 70px;
-  }
 }
 
 .wonder-tooltip {
