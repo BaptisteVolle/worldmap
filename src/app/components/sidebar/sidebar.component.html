@@ -1,0 +1,77 @@
+<div class="sidebar-container">
+  <h2>Civilization Wonders</h2>
+
+  <!-- Wonder Type Filters -->
+  <div class="control-section">
+    <h3>Wonder Types</h3>
+    <div class="wonder-filter">
+      <mat-button-toggle-group multiple>
+        <mat-button-toggle
+          [checked]="selectedFilters.includes('Wonder')"
+          (change)="onFilterChange('Wonder', $event)"
+        >
+          World
+        </mat-button-toggle>
+        <mat-button-toggle
+          [checked]="selectedFilters.includes('Natural Wonder')"
+          (change)="onFilterChange('Natural Wonder', $event)"
+        >
+          Natural
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+
+  <!-- Wonder Selector Dropdown -->
+  <div class="control-section">
+    <h3>Find Wonder</h3>
+    <mat-form-field appearance="outline" class="wonder-selector">
+      <mat-label>Select a wonder</mat-label>
+      <mat-select
+        [formControl]="selectedWonder"
+        (selectionChange)="onWonderSelected($event)"
+      >
+        <mat-option>
+          <div class="search-option">
+            <mat-icon>search</mat-icon>
+            <input
+              type="text"
+              placeholder="Search wonders..."
+              (click)="$event.stopPropagation()"
+              (keydown)="$event.stopPropagation()"
+              [formControl]="searchControl"
+            />
+          </div>
+        </mat-option>
+        <mat-option *ngFor="let wonder of filteredWonders" [value]="wonder">
+          <div class="wonder-option">
+            <img
+              *ngIf="wonder.image"
+              [src]="wonder.image"
+              alt="Wonder icon"
+              class="wonder-option-image"
+            />
+            <span>{{ wonder.name }}</span>
+          </div>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Info Card -->
+  <div class="control-section">
+    <mat-card appearance="outlined" class="info-card">
+      <mat-card-header>
+        <mat-card-title>About This Map</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          This map displays the locations of wonders from the Civilization game
+          series.
+        </p>
+        <p>Use the filters above to select specific types of wonders.</p>
+        <p>Select a wonder from the dropdown to quickly find its location.</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

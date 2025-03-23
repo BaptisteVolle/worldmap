@@ -1,82 +1,26 @@
 <div class="app-container">
-  <div class="world-map-app-container">
-    <!-- Left side menu -->
-    <div class="map-menu">
-      <h2>Civilization Wonders Map</h2>
-
-      <mat-divider></mat-divider>
-
-      <div class="wonder-toggles">
-        <h3>Civilization Wonders</h3>
-        <mat-slide-toggle
-          color="primary"
-          [checked]="showWonders"
-          (change)="toggleWonders($event)"
-        >
-          Show Wonders
-        </mat-slide-toggle>
-        <div class="wonder-filter">
-          <mat-button-toggle-group multiple>
-            <mat-button-toggle
-              [checked]="wonderFilters.includes('Wonder')"
-              (change)="filterWonders('Wonder', $event)"
-            >
-              World Wonders
-            </mat-button-toggle>
-            <mat-button-toggle
-              [checked]="wonderFilters.includes('Natural Wonder')"
-              (change)="filterWonders('Natural Wonder', $event)"
-            >
-              Natural Wonders
-            </mat-button-toggle>
-          </mat-button-toggle-group>
-        </div>
-
-        <div class="wonder-filter">
-          <h4>Filter by Game:</h4>
-          <mat-button-toggle-group multiple>
-            <mat-button-toggle
-              [checked]="gameFilters.includes('Civ V')"
-              (change)="filterByGame('Civ V', $event)"
-            >
-              Civilization V
-            </mat-button-toggle>
-            <mat-button-toggle
-              [checked]="gameFilters.includes('Civ VI')"
-              (change)="filterByGame('Civ VI', $event)"
-            >
-              Civilization VI
-            </mat-button-toggle>
-            <mat-button-toggle
-              [checked]="gameFilters.includes('Civ VII')"
-              (change)="filterByGame('Civ VII', $event)"
-            >
-              Civilization VII
-            </mat-button-toggle>
-          </mat-button-toggle-group>
-        </div>
+  <div class="fixed-window-container">
+    <div class="content-layout">
+      <!-- Map section (will grow to fill available space) -->
+      <div class="map-section">
+        <app-map
+          [wonders]="wonders"
+          [filteredTypes]="wonderFilters"
+          #mapComponent
+        ></app-map>
       </div>
 
-      <mat-divider></mat-divider>
-
-      <mat-card appearance="outlined" class="info-card">
-        <mat-card-header>
-          <mat-card-title>About This Map</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            This map displays the locations of wonders from the Civilization
-            game series.
-          </p>
-          <p>Use the toggles above to filter between different wonder types.</p>
-          <p>Click on any wonder marker to see more details about it.</p>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
-    <!-- Map container -->
-    <div class="world-map-container">
-      <div id="map"></div>
+      <!-- Sidebar section (fixed width) -->
+      <div class="sidebar-section">
+        <app-sidebar
+          [wonders]="wonders"
+          [filteredWonders]="filteredWonders"
+          [selectedFilters]="wonderFilters"
+          (filterChange)="onFilterChange($event)"
+          (searchChange)="onSearchChange($event)"
+          (wonderSelected)="mapComponent.flyToWonder($event)"
+        ></app-sidebar>
+      </div>
     </div>
   </div>
 </div>

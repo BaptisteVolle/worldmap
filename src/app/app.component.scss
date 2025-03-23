@@ -1,148 +1,81 @@
-/* Base layout containers */
 .app-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
   width: 100%;
-}
-
-.world-map-app-container {
+  height: 100vh;
   display: flex;
-  flex-direction: row;
-  flex: 1;
-  height: calc(100vh - 16px);
-  overflow: hidden;
-}
-
-/* Map elements */
-.world-map-container {
-  flex: 1;
-  position: relative;
+  align-items: center;
+  justify-content: center;
   background-color: #f5f5f5;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  overflow: hidden;
+  padding: 20px;
 }
 
-#map {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.fixed-window-container {
+  width: 90%;
+  height: 90%;
+  max-width: 2000px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+}
+
+// Use flexbox layout to organize the content
+.content-layout {
+  display: flex;
   width: 100%;
   height: 100%;
 }
 
-/* Side panel */
-.map-menu {
+// Map section takes up all available space
+.map-section {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  min-width: 0; // Prevent flex item from overflowing
+}
+
+// Sidebar has fixed width
+.sidebar-section {
   width: 300px;
-  padding: 16px;
+  height: 100%;
   overflow-y: auto;
-  overflow-x: hidden;
-  background-color: white;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  background-color: #fff;
+  border-left: 1px solid #ddd;
 }
 
-/* Leaflet control positioning */
-.leaflet-control-zoom {
-  margin-bottom: 40px !important;
-  margin-right: 20px !important;
-}
-
-.leaflet-control-scale {
-  margin-bottom: 20px !important;
-}
-
-/* Wonder tooltips and popups */
-.wonder-tooltip {
-  font-size: 14px;
-  background-color: white;
-  border: 1px solid #333;
-  border-radius: 4px;
-  padding: 4px 8px;
-  position: absolute;
-  max-width: 200px;
-  z-index: 1000;
-}
-
-.wonder-popup h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-}
-
-/* Control panel elements */
-.wonder-toggles {
-  margin: 16px 0;
-
-  h3 {
-    margin-bottom: 8px;
+// Responsive adjustments
+@media (max-width: 900px) {
+  .content-layout {
+    flex-direction: column; // Stack vertically on smaller screens
   }
 
-  .wonder-filter {
-    margin-top: 16px;
+  .map-section {
+    flex: 1;
+    min-height: 60%; // Map takes 60% of height on mobile
+  }
 
-    .mat-button-toggle-group {
-      width: 100%;
-      display: flex;
-
-      .mat-button-toggle {
-        flex: 1;
-        text-align: center;
-      }
-    }
+  .sidebar-section {
+    width: 100%;
+    height: 40%; // Sidebar takes 40% of height on mobile
+    border-left: none;
+    border-top: 1px solid #ddd;
   }
 }
 
-.wonder-popup {
-  min-width: 250px;
-  max-width: 300px;
-
-  h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
+@media (max-width: 480px) {
+  .app-container {
+    padding: 10px;
   }
 
-  .wonder-quote {
-    font-style: italic;
-    border-left: 3px solid #ddd;
-    margin: 10px 0;
-    padding: 5px 0 5px 10px;
-
-    footer {
-      font-size: 0.9em;
-      text-align: right;
-      margin-top: 5px;
-    }
+  .fixed-window-container {
+    width: 95%;
+    height: 95%;
   }
 
-  .wonder-links {
-    margin-top: 10px;
-    text-align: right;
-
-    a {
-      color: #0078a8;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  .map-section {
+    min-height: 50%; // Equal split on very small screens
   }
-}
 
-mat-divider {
-  margin: 16px 0;
-}
-
-.info-card {
-  margin-top: 16px;
-}
-
-/* Ensure Leaflet container fills available space */
-.leaflet-container {
-  height: 100% !important;
-  width: 100% !important;
+  .sidebar-section {
+    height: 50%; // Equal split on very small screens
+  }
 }

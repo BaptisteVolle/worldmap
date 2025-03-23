@@ -1,1599 +1,730 @@
 [
     {
+        "id": 1,
         "name": "Alhambra",
         "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
         "coordinates": [
             -3.5886,
             37.1761
         ],
         "wikipedia": "https://en.wikipedia.org/wiki/Alhambra",
-        "icon": "assets/icons/alhambra.svg",
         "description": "A palace and fortress complex located in Granada, Spain.",
         "quote": "Everything here appears calculated to inspire kind and happy feelings, for everything is delicate and beautiful.",
-        "quoteAuthor": "Washington Irving"
+        "quoteAuthor": "Washington Irving",
+        "image": "assets/wonder/Alhambra_(Civ6).png"
     },
     {
-        "name": "Petra",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            35.4444,
-            30.3285
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Petra",
-        "icon": "assets/icons/petra.svg",
-        "description": "An ancient city carved into rose-colored rock faces.",
-        "quote": "A rose-red city half as old as time.",
-        "quoteAuthor": "John William Burgon"
-    },
-    {
-        "name": "Angkor Wat",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            103.8670,
-            13.4125
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Angkor_Wat",
-        "icon": "assets/icons/angkor.svg",
-        "description": "The largest religious monument in the world.",
-        "quote": "The temple is like no other building in the world. It has towers and decoration and all the refinements which the human genius can conceive of.",
-        "quoteAuthor": "Antonio da Madalena"
-    },
-    {
-        "name": "Colosseum",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            12.4924,
-            41.8902
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Colosseum",
-        "icon": "assets/icons/colosseum.svg",
-        "description": "An oval amphitheatre in Rome.",
-        "quote": "He who saw the Colosseum, saw Rome.",
-        "quoteAuthor": "Martial"
-    },
-    {
-        "name": "Statue of Liberty",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -74.0445,
-            40.6892
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Statue_of_Liberty",
-        "icon": "assets/icons/liberty.svg",
-        "description": "A symbol of freedom in New York Harbor.",
-        "quote": "Give me your tired, your poor, your huddled masses yearning to breathe free.",
-        "quoteAuthor": "Emma Lazarus"
-    },
-    {
-        "name": "Mount Everest",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            86.9250,
-            27.9881
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Mount_Everest",
-        "icon": "assets/icons/mountain.svg",
-        "description": "Earth's highest mountain above sea level.",
-        "quote": "It's not the mountain we conquer, but ourselves.",
-        "quoteAuthor": "Sir Edmund Hillary"
-    },
-    {
-        "name": "Mount Kilimanjaro",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            37.3556,
-            -3.0674
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro",
-        "icon": "assets/icons/mountain.svg",
-        "description": "The highest mountain in Africa.",
-        "quote": "The summit of Kilimanjaro is a craterous rim of a volcano. I reached there at noon, and waited on the highest point until the clouds lifted.",
-        "quoteAuthor": "Hans Meyer"
-    },
-    {
-        "name": "Machu Picchu",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            -72.5429,
-            -13.1631
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Machu_Picchu",
-        "icon": "assets/icons/machu.svg",
-        "description": "A 15th-century Inca citadel set high in the Andes Mountains.",
-        "quote": "Few romances can ever surpass that of the granite citadel on top of the beetling precipices of Machu Picchu.",
-        "quoteAuthor": "Hiram Bingham"
-    },
-    {
-        "name": "Taj Mahal",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            78.0422,
-            27.1751
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Taj_Mahal",
-        "icon": "assets/icons/tajmahal.svg",
-        "description": "An ivory-white marble mausoleum.",
-        "quote": "Not a piece of architecture, as other buildings are, but the proud passion of an emperor's love wrought in living stones.",
-        "quoteAuthor": "Sir Edwin Arnold"
-    },
-    {
-        "name": "Galapagos Islands",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -91.1234,
-            -0.7772
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands",
-        "icon": "assets/icons/islands.svg",
-        "description": "A volcanic archipelago in the Pacific Ocean.",
-        "quote": "The natural history of these islands is eminently curious, and well deserves attention.",
-        "quoteAuthor": "Charles Darwin"
-    },
-    {
-        "name": "Eiffel Tower",
-        "type": "Wonder",
-        "game": [
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            2.2945,
-            48.8584
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Eiffel_Tower",
-        "icon": "assets/icons/eiffel.svg",
-        "description": "A wrought-iron lattice tower on the Champ de Mars in Paris.",
-        "quote": "I ought to be jealous of the tower. She is more famous than I am.",
-        "quoteAuthor": "Gustave Eiffel"
-    },
-    {
-        "name": "Chichen Itza",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -88.5677,
-            20.6843
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Chichen_Itza",
-        "icon": "assets/icons/pyramid.svg",
-        "description": "A large pre-Columbian city built by the Maya people.",
-        "quote": "The ancient Maya observed the movements of the sun, moon, and planets, and based their calendar on these observations.",
-        "quoteAuthor": "Sylvanus Morley"
-    },
-    {
-        "name": "Great Library of Alexandria",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            29.9187,
-            31.2001
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Library_of_Alexandria",
-        "icon": "assets/icons/library.svg",
-        "description": "One of the largest and most significant libraries of the ancient world.",
-        "quote": "The Library was the first occasion where a large concentration of scholars had been brought together under one roof.",
-        "quoteAuthor": "Carl Sagan"
-    },
-    {
-        "name": "Hanging Gardens of Babylon",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            44.4200,
-            32.5355
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Hanging_Gardens_of_Babylon",
-        "icon": "assets/icons/garden.svg",
-        "description": "One of the Seven Wonders of the Ancient World.",
-        "quote": "The Hanging Gardens have plants cultivated above ground level, and the roots of the trees are embedded in an upper terrace rather than in the earth.",
-        "quoteAuthor": "Philo of Byzantium"
-    },
-    {
-        "name": "Cristo Redentor",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -43.2104,
-            -22.9519
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
-        "icon": "assets/icons/christ.svg",
-        "description": "Art Deco statue of Jesus Christ in Rio de Janeiro, Brazil.",
-        "quote": "Christ the Redeemer, with open arms, is always ready to receive and embrace anyone who comes to Him.",
-        "quoteAuthor": "Pope Francis"
-    },
-    {
-        "name": "Great Wall of China",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            116.5704,
-            40.4319
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Great_Wall_of_China",
-        "icon": "assets/icons/wall.svg",
-        "description": "A series of fortifications built along the historical northern borders of China.",
-        "quote": "The Great Wall of China is a monument to human ingenuity and indefatigability; it's also a monument to human folly.",
-        "quoteAuthor": "Jonathan Glancey"
-    },
-    {
-        "name": "Yosemite Valley",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -119.5936,
-            37.7490
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Yosemite_Valley",
-        "icon": "assets/icons/valley.svg",
-        "description": "A glacial valley in California's Sierra Nevada mountains.",
-        "quote": "It is by far the grandest of all the special temples of Nature I was ever permitted to enter.",
-        "quoteAuthor": "John Muir"
-    },
-    {
-        "name": "Forbidden City",
-        "type": "Wonder",
-        "game": [
-            "Civ VI"
-        ],
-        "coordinates": [
-            116.3972,
-            39.9163
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Forbidden_City",
-        "icon": "assets/icons/forbidden.svg",
-        "description": "A palace complex in central Beijing, China.",
-        "quote": "Out of this door might come a princess in a dress of golden silk, embroidered with dragons, or a band of swordsmen in leather coats and iron helmets.",
-        "quoteAuthor": "Reginald Johnston"
-    },
-    {
-        "name": "Alhambra",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -3.5886,
-            37.1761
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Alhambra",
-        "icon": "assets/icons/alhambra.svg",
-        "description": "A palace and fortress complex located in Granada, Spain.",
-        "quote": "Everything here appears calculated to inspire kind and happy feelings, for everything is delicate and beautiful.",
-        "quoteAuthor": "Washington Irving"
-    },
-    {
-        "name": "Petra",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            35.4444,
-            30.3285
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Petra",
-        "icon": "assets/icons/petra.svg",
-        "description": "An ancient city carved into rose-colored rock faces.",
-        "quote": "A rose-red city half as old as time.",
-        "quoteAuthor": "John William Burgon"
-    },
-    {
-        "name": "Angkor Wat",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            103.8670,
-            13.4125
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Angkor_Wat",
-        "icon": "assets/icons/angkor.svg",
-        "description": "The largest religious monument in the world.",
-        "quote": "The temple is like no other building in the world. It has towers and decoration and all the refinements which the human genius can conceive of.",
-        "quoteAuthor": "Antonio da Madalena"
-    },
-    {
-        "name": "Colosseum",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            12.4924,
-            41.8902
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Colosseum",
-        "icon": "assets/icons/colosseum.svg",
-        "description": "An oval amphitheatre in Rome.",
-        "quote": "He who saw the Colosseum, saw Rome.",
-        "quoteAuthor": "Martial"
-    },
-    {
-        "name": "Statue of Liberty",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -74.0445,
-            40.6892
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Statue_of_Liberty",
-        "icon": "assets/icons/liberty.svg",
-        "description": "A symbol of freedom in New York Harbor.",
-        "quote": "Give me your tired, your poor, your huddled masses yearning to breathe free.",
-        "quoteAuthor": "Emma Lazarus"
-    },
-    {
-        "name": "Mount Everest",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            86.9250,
-            27.9881
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Mount_Everest",
-        "icon": "assets/icons/mountain.svg",
-        "description": "Earth's highest mountain above sea level.",
-        "quote": "It's not the mountain we conquer, but ourselves.",
-        "quoteAuthor": "Sir Edmund Hillary"
-    },
-    {
-        "name": "Mount Kilimanjaro",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            37.3556,
-            -3.0674
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro",
-        "icon": "assets/icons/mountain.svg",
-        "description": "The highest mountain in Africa.",
-        "quote": "The summit of Kilimanjaro is a craterous rim of a volcano. I reached there at noon, and waited on the highest point until the clouds lifted.",
-        "quoteAuthor": "Hans Meyer"
-    },
-    {
-        "name": "Machu Picchu",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            -72.5429,
-            -13.1631
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Machu_Picchu",
-        "icon": "assets/icons/machu.svg",
-        "description": "A 15th-century Inca citadel set high in the Andes Mountains.",
-        "quote": "Few romances can ever surpass that of the granite citadel on top of the beetling precipices of Machu Picchu.",
-        "quoteAuthor": "Hiram Bingham"
-    },
-    {
-        "name": "Taj Mahal",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            78.0422,
-            27.1751
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Taj_Mahal",
-        "icon": "assets/icons/tajmahal.svg",
-        "description": "An ivory-white marble mausoleum.",
-        "quote": "Not a piece of architecture, as other buildings are, but the proud passion of an emperor's love wrought in living stones.",
-        "quoteAuthor": "Sir Edwin Arnold"
-    },
-    {
-        "name": "Galapagos Islands",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -91.1234,
-            -0.7772
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands",
-        "icon": "assets/icons/islands.svg",
-        "description": "A volcanic archipelago in the Pacific Ocean.",
-        "quote": "The natural history of these islands is eminently curious, and well deserves attention.",
-        "quoteAuthor": "Charles Darwin"
-    },
-    {
-        "name": "Eiffel Tower",
-        "type": "Wonder",
-        "game": [
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            2.2945,
-            48.8584
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Eiffel_Tower",
-        "icon": "assets/icons/eiffel.svg",
-        "description": "A wrought-iron lattice tower on the Champ de Mars in Paris.",
-        "quote": "I ought to be jealous of the tower. She is more famous than I am.",
-        "quoteAuthor": "Gustave Eiffel"
-    },
-    {
-        "name": "Chichen Itza",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -88.5677,
-            20.6843
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Chichen_Itza",
-        "icon": "assets/icons/pyramid.svg",
-        "description": "A large pre-Columbian city built by the Maya people.",
-        "quote": "The ancient Maya observed the movements of the sun, moon, and planets, and based their calendar on these observations.",
-        "quoteAuthor": "Sylvanus Morley"
-    },
-    {
-        "name": "Great Library of Alexandria",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            29.9187,
-            31.2001
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Library_of_Alexandria",
-        "icon": "assets/icons/library.svg",
-        "description": "One of the largest and most significant libraries of the ancient world.",
-        "quote": "The Library was the first occasion where a large concentration of scholars had been brought together under one roof.",
-        "quoteAuthor": "Carl Sagan"
-    },
-    {
-        "name": "Hanging Gardens of Babylon",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            44.4200,
-            32.5355
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Hanging_Gardens_of_Babylon",
-        "icon": "assets/icons/garden.svg",
-        "description": "One of the Seven Wonders of the Ancient World.",
-        "quote": "The Hanging Gardens have plants cultivated above ground level, and the roots of the trees are embedded in an upper terrace rather than in the earth.",
-        "quoteAuthor": "Philo of Byzantium"
-    },
-    {
-        "name": "Cristo Redentor",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -43.2104,
-            -22.9519
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
-        "icon": "assets/icons/christ.svg",
-        "description": "Art Deco statue of Jesus Christ in Rio de Janeiro, Brazil.",
-        "quote": "Christ the Redeemer, with open arms, is always ready to receive and embrace anyone who comes to Him.",
-        "quoteAuthor": "Pope Francis"
-    },
-    {
-        "name": "Great Wall of China",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            116.5704,
-            40.4319
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Great_Wall_of_China",
-        "icon": "assets/icons/wall.svg",
-        "description": "A series of fortifications built along the historical northern borders of China.",
-        "quote": "The Great Wall of China is a monument to human ingenuity and indefatigability; it's also a monument to human folly.",
-        "quoteAuthor": "Jonathan Glancey"
-    },
-    {
-        "name": "Yosemite Valley",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -119.5936,
-            37.7490
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Yosemite_Valley",
-        "icon": "assets/icons/valley.svg",
-        "description": "A glacial valley in California's Sierra Nevada mountains.",
-        "quote": "It is by far the grandest of all the special temples of Nature I was ever permitted to enter.",
-        "quoteAuthor": "John Muir"
-    },
-    {
-        "name": "Forbidden City",
-        "type": "Wonder",
-        "game": [
-            "Civ VI"
-        ],
-        "coordinates": [
-            116.3972,
-            39.9163
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Forbidden_City",
-        "icon": "assets/icons/forbidden.svg",
-        "description": "A palace complex in central Beijing, China.",
-        "quote": "Out of this door might come a princess in a dress of golden silk, embroidered with dragons, or a band of swordsmen in leather coats and iron helmets.",
-        "quoteAuthor": "Reginald Johnston"
-    },
-    {
-        "name": "Alhambra",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -3.5886,
-            37.1761
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Alhambra",
-        "icon": "assets/icons/alhambra.svg",
-        "description": "A palace and fortress complex located in Granada, Spain.",
-        "quote": "Everything here appears calculated to inspire kind and happy feelings, for everything is delicate and beautiful.",
-        "quoteAuthor": "Washington Irving"
-    },
-    {
-        "name": "Petra",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            35.4444,
-            30.3285
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Petra",
-        "icon": "assets/icons/petra.svg",
-        "description": "An ancient city carved into rose-colored rock faces.",
-        "quote": "A rose-red city half as old as time.",
-        "quoteAuthor": "John William Burgon"
-    },
-    {
-        "name": "Angkor Wat",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            103.8670,
-            13.4125
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Angkor_Wat",
-        "icon": "assets/icons/angkor.svg",
-        "description": "The largest religious monument in the world.",
-        "quote": "The temple is like no other building in the world. It has towers and decoration and all the refinements which the human genius can conceive of.",
-        "quoteAuthor": "Antonio da Madalena"
-    },
-    {
-        "name": "Colosseum",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            12.4924,
-            41.8902
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Colosseum",
-        "icon": "assets/icons/colosseum.svg",
-        "description": "An oval amphitheatre in Rome.",
-        "quote": "He who saw the Colosseum, saw Rome.",
-        "quoteAuthor": "Martial"
-    },
-    {
-        "name": "Statue of Liberty",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -74.0445,
-            40.6892
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Statue_of_Liberty",
-        "icon": "assets/icons/liberty.svg",
-        "description": "A symbol of freedom in New York Harbor.",
-        "quote": "Give me your tired, your poor, your huddled masses yearning to breathe free.",
-        "quoteAuthor": "Emma Lazarus"
-    },
-    {
-        "name": "Mount Everest",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            86.9250,
-            27.9881
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Mount_Everest",
-        "icon": "assets/icons/mountain.svg",
-        "description": "Earth's highest mountain above sea level.",
-        "quote": "It's not the mountain we conquer, but ourselves.",
-        "quoteAuthor": "Sir Edmund Hillary"
-    },
-    {
-        "name": "Mount Kilimanjaro",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            37.3556,
-            -3.0674
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro",
-        "icon": "assets/icons/mountain.svg",
-        "description": "The highest mountain in Africa.",
-        "quote": "The summit of Kilimanjaro is a craterous rim of a volcano. I reached there at noon, and waited on the highest point until the clouds lifted.",
-        "quoteAuthor": "Hans Meyer"
-    },
-    {
-        "name": "Machu Picchu",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            -72.5429,
-            -13.1631
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Machu_Picchu",
-        "icon": "assets/icons/machu.svg",
-        "description": "A 15th-century Inca citadel set high in the Andes Mountains.",
-        "quote": "Few romances can ever surpass that of the granite citadel on top of the beetling precipices of Machu Picchu.",
-        "quoteAuthor": "Hiram Bingham"
-    },
-    {
-        "name": "Taj Mahal",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            78.0422,
-            27.1751
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Taj_Mahal",
-        "icon": "assets/icons/tajmahal.svg",
-        "description": "An ivory-white marble mausoleum.",
-        "quote": "Not a piece of architecture, as other buildings are, but the proud passion of an emperor's love wrought in living stones.",
-        "quoteAuthor": "Sir Edwin Arnold"
-    },
-    {
-        "name": "Galapagos Islands",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -91.1234,
-            -0.7772
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands",
-        "icon": "assets/icons/islands.svg",
-        "description": "A volcanic archipelago in the Pacific Ocean.",
-        "quote": "The natural history of these islands is eminently curious, and well deserves attention.",
-        "quoteAuthor": "Charles Darwin"
-    },
-    {
-        "name": "Eiffel Tower",
-        "type": "Wonder",
-        "game": [
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            2.2945,
-            48.8584
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Eiffel_Tower",
-        "icon": "assets/icons/eiffel.svg",
-        "description": "A wrought-iron lattice tower on the Champ de Mars in Paris.",
-        "quote": "I ought to be jealous of the tower. She is more famous than I am.",
-        "quoteAuthor": "Gustave Eiffel"
-    },
-    {
-        "name": "Chichen Itza",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -88.5677,
-            20.6843
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Chichen_Itza",
-        "icon": "assets/icons/pyramid.svg",
-        "description": "A large pre-Columbian city built by the Maya people.",
-        "quote": "The ancient Maya observed the movements of the sun, moon, and planets, and based their calendar on these observations.",
-        "quoteAuthor": "Sylvanus Morley"
-    },
-    {
-        "name": "Great Library of Alexandria",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            29.9187,
-            31.2001
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Library_of_Alexandria",
-        "icon": "assets/icons/library.svg",
-        "description": "One of the largest and most significant libraries of the ancient world.",
-        "quote": "The Library was the first occasion where a large concentration of scholars had been brought together under one roof.",
-        "quoteAuthor": "Carl Sagan"
-    },
-    {
-        "name": "Hanging Gardens of Babylon",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            44.4200,
-            32.5355
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Hanging_Gardens_of_Babylon",
-        "icon": "assets/icons/garden.svg",
-        "description": "One of the Seven Wonders of the Ancient World.",
-        "quote": "The Hanging Gardens have plants cultivated above ground level, and the roots of the trees are embedded in an upper terrace rather than in the earth.",
-        "quoteAuthor": "Philo of Byzantium"
-    },
-    {
-        "name": "Cristo Redentor",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -43.2104,
-            -22.9519
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
-        "icon": "assets/icons/christ.svg",
-        "description": "Art Deco statue of Jesus Christ in Rio de Janeiro, Brazil.",
-        "quote": "Christ the Redeemer, with open arms, is always ready to receive and embrace anyone who comes to Him.",
-        "quoteAuthor": "Pope Francis"
-    },
-    {
-        "name": "Great Wall of China",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            116.5704,
-            40.4319
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Great_Wall_of_China",
-        "icon": "assets/icons/wall.svg",
-        "description": "A series of fortifications built along the historical northern borders of China.",
-        "quote": "The Great Wall of China is a monument to human ingenuity and indefatigability; it's also a monument to human folly.",
-        "quoteAuthor": "Jonathan Glancey"
-    },
-    {
-        "name": "Yosemite Valley",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -119.5936,
-            37.7490
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Yosemite_Valley",
-        "icon": "assets/icons/valley.svg",
-        "description": "A glacial valley in California's Sierra Nevada mountains.",
-        "quote": "It is by far the grandest of all the special temples of Nature I was ever permitted to enter.",
-        "quoteAuthor": "John Muir"
-    },
-    {
-        "name": "Forbidden City",
-        "type": "Wonder",
-        "game": [
-            "Civ VI"
-        ],
-        "coordinates": [
-            116.3972,
-            39.9163
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Forbidden_City",
-        "icon": "assets/icons/forbidden.svg",
-        "description": "A palace complex in central Beijing, China.",
-        "quote": "Out of this door might come a princess in a dress of golden silk, embroidered with dragons, or a band of swordsmen in leather coats and iron helmets.",
-        "quoteAuthor": "Reginald Johnston"
-    },
-    {
-        "name": "Pyramids",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            31.1342,
-            29.9792
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
-        "icon": "assets/icons/pyramid.svg",
-        "description": "The oldest of the Seven Wonders of the Ancient World.",
-        "quote": "O, let not the pains of death which come upon thee enter into my body. I am the god Tem, and I am in the foremost part of the sky, and the power which protecteth me is that which is with all the gods forever.",
-        "quoteAuthor": "The Book of the Dead"
-    },
-    {
-        "name": "Stonehenge",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            -1.8262,
-            51.1789
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Stonehenge",
-        "icon": "assets/icons/stonehenge.svg",
-        "description": "A prehistoric monument in Wiltshire, England.",
-        "quote": "Time crumbles things; everything grows old and is forgotten under the power of time.",
-        "quoteAuthor": "Aristotle"
-    },
-    {
-        "name": "Oracle",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            22.5012,
-            38.4824
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Oracle_of_Delphi",
-        "icon": "assets/icons/oracle.svg",
-        "description": "A sacred site in ancient Greece used for the worship of Apollo.",
-        "quote": "The ancient Oracle said that I was the wisest of all the Greeks. It is because I alone, of all the Greeks, know that I know nothing.",
-        "quoteAuthor": "Socrates"
-    },
-    {
-        "name": "Hagia Sophia",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            28.9784,
-            41.0086
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Hagia_Sophia",
-        "icon": "assets/icons/hagia.svg",
-        "description": "A former cathedral and mosque in Istanbul.",
-        "quote": "I have surpassed thee, O Solomon!",
-        "quoteAuthor": "Justinian I"
-    },
-    {
-        "name": "Notre Dame",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            2.3500,
-            48.8530
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris",
-        "icon": "assets/icons/cathedral.svg",
-        "description": "A medieval Catholic cathedral in Paris.",
-        "quote": "Architecture has recorded the great ideas of the human race. Not only every religious symbol, but every human thought has its page in that vast book.",
-        "quoteAuthor": "Victor Hugo"
-    },
-    {
-        "name": "Broadway",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -73.9856,
-            40.7592
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Broadway_theatre",
-        "icon": "assets/icons/theater.svg",
-        "description": "A theater district in New York City.",
-        "quote": "Give my regards to Broadway, remember me to Herald Square. Tell all the gang at Forty-Second Street, that I will soon be there.",
-        "quoteAuthor": "George M. Cohan"
-    },
-    {
-        "name": "Porcelain Tower",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            118.7820,
-            32.0456
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Porcelain_Tower_of_Nanjing",
-        "icon": "assets/icons/tower.svg",
-        "description": "A pagoda in Nanjing, China, built during the Ming Dynasty.",
-        "quote": "It is the most beautiful porcelain tower of which we have heard tell in the whole world.",
-        "quoteAuthor": "Le Comte"
-    },
-    {
-        "name": "Hubble Space Telescope",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -76.8755,
-            38.9897
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope",
-        "icon": "assets/icons/telescope.svg",
-        "description": "A space telescope that was launched into low Earth orbit in 1990.",
-        "quote": "The important achievement of Apollo was demonstrating that humanity is not forever chained to this planet and our visions go rather further than that and our opportunities are unlimited.",
-        "quoteAuthor": "Neil Armstrong"
-    },
-    {
-        "name": "CN Tower",
-        "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
-        "coordinates": [
-            -79.3872,
-            43.6426
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/CN_Tower",
-        "icon": "assets/icons/cntower.svg",
-        "description": "A concrete communications and observation tower in Toronto.",
-        "quote": "The CN Tower is the tallest metal structure on earth. This is assuming you don't count the Trojan horse.",
-        "quoteAuthor": "Paul Quarrington"
-    },
-    {
-        "name": "Paititi",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ VI"
-        ],
-        "coordinates": [
-            -71.2809,
-            -12.6661
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Paititi",
-        "icon": "assets/icons/city.svg",
-        "description": "A legendary lost Incan city of gold.",
-        "quote": "We have before us a quest to find the lost city of Paititi, the golden city that was rumored to exist somewhere in the dense jungles east of the Andes.",
-        "quoteAuthor": "Explorer Percy Fawcett"
-    },
-    {
-        "name": "Matterhorn",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ VI"
-        ],
-        "coordinates": [
-            7.6587,
-            45.9764
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Matterhorn",
-        "icon": "assets/icons/mountain.svg",
-        "description": "A mountain in the Alps straddling the border between Switzerland and Italy.",
-        "quote": "One can't describe the Matterhorn, one can only look at it in wonder.",
-        "quoteAuthor": "Edward Whymper"
-    },
-    {
-        "name": "Chocolate Hills",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ VI"
-        ],
-        "coordinates": [
-            124.1686,
-            9.8312
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Chocolate_Hills",
-        "icon": "assets/icons/hills.svg",
-        "description": "Geological formations in Bohol, Philippines.",
-        "quote": "These perfectly cone-shaped hills, like giant mole hills, are one of nature's wonders, though no one can explain how they were formed.",
-        "quoteAuthor": "Lonely Planet"
-    },
-    {
-        "name": "Giant's Causeway",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ VI",
-            "Civ VII"
-        ],
-        "coordinates": [
-            -6.5115,
-            55.2408
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Giant%27s_Causeway",
-        "icon": "assets/icons/causeway.svg",
-        "description": "An area of about 40,000 interlocking basalt columns in Northern Ireland.",
-        "quote": "The place where Finn McCool's causeway ends and the natural world begins is impossible to determine.",
-        "quoteAuthor": "National Geographic"
-    },
-    {
+        "id": 2,
         "name": "Amundsen-Scott Research Station",
         "type": "Wonder",
-        "game": [
-            "Civ VI: Gathering Storm"
-        ],
         "coordinates": [
             0.0,
             -90.0
         ],
         "wikipedia": "https://en.wikipedia.org/wiki/Amundsen%E2%80%93Scott_South_Pole_Station",
-        "icon": "assets/icons/research.svg",
-        "description": "A United States scientific research station at the South Pole.",
-        "quote": "The land here is unlike anything else. It's the closest I've ever come to being on another planet.",
-        "quoteAuthor": "Anthony Bourdain"
+        "description": "A United States scientific research station at the Geographic South Pole.",
+        "quote": "Antarctica has this mythic weight. It resides in the collective unconscious of so many people, and it makes this huge impact, just like outer space. It's like going to the moon.",
+        "quoteAuthor": "Jon Krakauer",
+        "image": "assets/wonder/Amundsen-Scott_Research_Station_(Civ6).png"
     },
     {
-        "name": "Bermuda Triangle",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ VI: Gathering Storm"
-        ],
-        "coordinates": [
-            -71.3824,
-            25.8000
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Bermuda_Triangle",
-        "icon": "assets/icons/triangle.svg",
-        "description": "A region in the western part of the North Atlantic Ocean where ships and aircraft are said to mysteriously disappear.",
-        "quote": "The Bermuda Triangle is a very strange place. Strange things happen out there that can't be explained.",
-        "quoteAuthor": "Charles Berlitz"
-    },
-    {
-        "name": "Tower of Pisa",
+        "id": 3,
+        "name": "Angkor Wat",
         "type": "Wonder",
-        "game": [
-            "Civ VII"
-        ],
         "coordinates": [
-            10.3989,
-            43.7229
+            103.8670,
+            13.4125
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa",
-        "icon": "assets/icons/pisa.svg",
-        "description": "A freestanding bell tower known for its unintended tilt.",
-        "quote": "The Leaning Tower of Pisa would be just another old tower if it stood up straight.",
-        "quoteAuthor": "Rick Steves"
+        "wikipedia": "https://en.wikipedia.org/wiki/Angkor_Wat",
+        "description": "A temple complex in Cambodia and the largest religious monument in the world.",
+        "quote": "The temple is like no other building in the world. It has towers and decoration and all the refinements which the human genius can conceive of.",
+        "quoteAuthor": "Antonio da Madalena",
+        "image": "assets/wonder/Angkor_Wat_(Civ6).png"
     },
     {
-        "name": "Sahara el Beyda",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ VI"
-        ],
+        "id": 4,
+        "name": "Apadana",
+        "type": "Wonder",
         "coordinates": [
-            25.3333,
-            27.3833
+            52.8883,
+            29.9304
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/White_Desert,_Egypt",
-        "icon": "assets/icons/desert.svg",
-        "description": "A natural protectorate in Egypt with white chalk rock formations.",
-        "quote": "One wonders at the forces of nature that created this alien landscape, so different from the rolling sand dunes of classic deserts.",
-        "quoteAuthor": "Lonely Planet"
+        "wikipedia": "https://en.wikipedia.org/wiki/Apadana",
+        "description": "An ancient audience hall in Persepolis, Iran, built by the Achaemenid kings.",
+        "quote": "All the nations of the earth brought him tribute, the produce of the mountains and plains, as was due to the King.",
+        "quoteAuthor": "Inscription on the tomb of Darius the Great",
+        "image": "assets/wonder/Apadana_(Civ6).png"
     },
     {
+        "id": 5,
+        "name": "Big Ben",
+        "type": "Wonder",
+        "coordinates": [
+            -0.1246,
+            51.5007
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Big_Ben",
+        "description": "The nickname for the Great Bell of the clock at the north end of the Palace of Westminster in London.",
+        "quote": "To achieve great things, two things are needed: a plan, and not quite enough time.",
+        "quoteAuthor": "Leonard Bernstein",
+        "image": "assets/wonder/Big_Ben_(Civ6).png"
+    },
+    {
+        "id": 6,
+        "name": "Biosphère",
+        "type": "Wonder",
+        "coordinates": [
+            -73.5274,
+            45.5139
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Montreal_Biosphere",
+        "description": "A museum in Montreal dedicated to the environment, originally built as the American Pavilion for Expo 67.",
+        "quote": "The biosphere is not just all the creatures that live in it, it's all the physical parts that they rely on too.",
+        "quoteAuthor": "David Attenborough",
+        "image": "assets/wonder/Biosphère_(Civ6).png"
+    },
+    {
+        "id": 7,
         "name": "Bolshoi Theatre",
         "type": "Wonder",
-        "game": [
-            "Civ VI"
-        ],
         "coordinates": [
-            37.6184,
-            55.7599
+            37.6186,
+            55.7600
         ],
         "wikipedia": "https://en.wikipedia.org/wiki/Bolshoi_Theatre",
-        "icon": "assets/icons/theater.svg",
-        "description": "A historic theatre in Moscow, Russia.",
-        "quote": "Art is not a luxury, but a necessity.",
-        "quoteAuthor": "Maya Plisetskaya"
+        "description": "A historic theatre in Moscow, Russia, designed principally for ballet and opera performances.",
+        "quote": "Opera is when a guy gets stabbed in the back and, instead of bleeding, he sings.",
+        "quoteAuthor": "Ed Gardner",
+        "image": "assets/wonder/Bolshoi_Theatre_(Civ6).png"
     },
     {
-        "name": "Estadio do Maracanã",
+        "id": 8,
+        "name": "Broadway",
         "type": "Wonder",
-        "game": [
-            "Civ VI"
+        "coordinates": [
+            -73.9857,
+            40.7614
         ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Broadway_theatre",
+        "description": "A theater district in Midtown Manhattan in New York City, represents the highest level of commercial theater in the English-speaking world.",
+        "quote": "Give my regards to Broadway, remember me to Herald Square. Tell all the gang at Forty-Second Street that I will soon be there.",
+        "quoteAuthor": "George M. Cohan",
+        "image": "assets/wonder/Broadway_(Civ6).png"
+    },
+    {
+        "id": 9,
+        "name": "Casa de Contratación",
+        "type": "Wonder",
+        "coordinates": [
+            -5.9845,
+            37.3826
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Casa_de_Contrataci%C3%B3n",
+        "description": "A government agency in Seville that controlled trade with Spanish colonies from 1503 to 1790.",
+        "quote": "The House of Trade controlled the great wealth that Spanish galleons carried from the New World.",
+        "quoteAuthor": "Spanish Proverb",
+        "image": "assets/wonder/Casa_de_Contratación_(Civ6).png"
+    },
+    {
+        "id": 10,
+        "name": "Chichen Itza",
+        "type": "Wonder",
+        "coordinates": [
+            -88.5686,
+            20.6829
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Chichen_Itza",
+        "description": "A large pre-Columbian city built by the Maya people in Mexico.",
+        "quote": "The Maya were skillful astronomers, recording the movements of the sun, moon, Venus, and the stars.",
+        "quoteAuthor": "Michael D. Coe",
+        "image": "assets/wonder/Chichen_Itza_(Civ6).png"
+    },
+    {
+        "id": 11,
+        "name": "Colosseum",
+        "type": "Wonder",
+        "coordinates": [
+            12.4924,
+            41.8902
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Colosseum",
+        "description": "An oval amphitheatre in the centre of Rome, Italy, the largest ever built.",
+        "quote": "While stands the Coliseum, Rome shall stand; When falls the Coliseum, Rome shall fall; And when Rome falls - the world.",
+        "quoteAuthor": "Lord Byron",
+        "image": "assets/wonder/Colosseum_(Civ6).png"
+    },
+    {
+        "id": 12,
+        "name": "Colossus",
+        "type": "Wonder",
+        "coordinates": [
+            28.2278,
+            36.4511
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Colossus_of_Rhodes",
+        "description": "A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes.",
+        "quote": "Even as it fell broken at the feet of the Greeks, so are we left to wonder at the magnitude of erecting such a work.",
+        "quoteAuthor": "Pliny the Elder",
+        "image": "assets/wonder/Colossus_(Civ6).png"
+    },
+    {
+        "id": 13,
+        "name": "Cristo Redentor",
+        "type": "Wonder",
+        "coordinates": [
+            -43.2104,
+            -22.9519
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
+        "description": "An Art Deco statue of Jesus Christ in Rio de Janeiro, Brazil.",
+        "quote": "Christ the Redeemer, with open arms, is always ready to receive and embrace anyone who comes to Him.",
+        "quoteAuthor": "Pope Francis",
+        "image": "assets/wonder/Cristo_Redentor_(Civ6).png"
+    },
+    {
+        "id": 14,
+        "name": "Eiffel Tower",
+        "type": "Wonder",
+        "coordinates": [
+            2.2945,
+            48.8584
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+        "description": "A wrought-iron lattice tower on the Champ de Mars in Paris, France.",
+        "quote": "I ought to be jealous of the tower. She is more famous than I am.",
+        "quoteAuthor": "Gustave Eiffel",
+        "image": "assets/wonder/Eiffel_Tower_(Civ6).png"
+    },
+    {
+        "id": 15,
+        "name": "Estádio do Maracanã",
+        "type": "Wonder",
         "coordinates": [
             -43.2302,
-            -22.9122
+            -22.9121
         ],
         "wikipedia": "https://en.wikipedia.org/wiki/Maracan%C3%A3_Stadium",
-        "icon": "assets/icons/stadium.svg",
-        "description": "A football stadium in Rio de Janeiro, Brazil.",
-        "quote": "Soccer isn't the same as Bach or Buddhism. But it is often more deeply felt than religion, and just as much a part of the community's fabric, a repository of traditions.",
-        "quoteAuthor": "Franklin Foer"
+        "description": "A football stadium in Rio de Janeiro, Brazil, one of the largest in the world.",
+        "quote": "The roar of the crowd at the Maracanã is like no other sound in sport.",
+        "quoteAuthor": "Pelé",
+        "image": "assets/wonder/Estádio_do_Maracanã_(Civ6).png"
     },
     {
-        "name": "Arecibo Observatory",
+        "id": 16,
+        "name": "Etemenanki",
         "type": "Wonder",
-        "game": [
-            "Civ VII"
-        ],
         "coordinates": [
-            -66.7528,
-            18.3442
+            44.4275,
+            32.5355
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Arecibo_Observatory",
-        "icon": "assets/icons/observatory.svg",
-        "description": "A radio telescope in Puerto Rico that was the largest single-aperture telescope until 2016.",
-        "quote": "The Arecibo message and all we do to reach across the heavens is our way of saying we are still here, we are still searching. And we still hope.",
-        "quoteAuthor": "Ann Druyan"
+        "wikipedia": "https://en.wikipedia.org/wiki/Etemenanki",
+        "description": "A ziggurat dedicated to Marduk in the ancient city of Babylon, possibly the inspiration for the biblical Tower of Babel.",
+        "quote": "Now the whole world had one language and a common speech. As people moved eastward, they found a plain in Shinar and settled there.",
+        "quoteAuthor": "Genesis 11:1-2",
+        "image": "assets/wonder/Etemenanki_(Civ6).png"
     },
     {
-        "name": "Ethnographic Museum",
+        "id": 17,
+        "name": "Forbidden City",
         "type": "Wonder",
-        "game": [
-            "Civ VII"
-        ],
         "coordinates": [
-            14.2129,
-            48.3069
+            116.3972,
+            39.9163
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Ethnography",
-        "icon": "assets/icons/museum.svg",
-        "description": "A museum showcasing different cultures across the world.",
-        "quote": "Memory is not just remembering the past, it is how we understand ourselves in the present.",
-        "quoteAuthor": "Wade Davis"
+        "wikipedia": "https://en.wikipedia.org/wiki/Forbidden_City",
+        "description": "A palace complex in central Beijing, China that served as the home of emperors.",
+        "quote": "Out of this door might come a princess in a dress of golden silk, embroidered with dragons, or a band of swordsmen in leather coats and iron helmets.",
+        "quoteAuthor": "Reginald Johnston",
+        "image": "assets/wonder/Forbidden_City_(Civ6).png"
     },
     {
-        "name": "Biosphere",
-        "type": "Wonder",
-        "game": [
-            "Civ VI: Gathering Storm"
-        ],
-        "coordinates": [
-            33.3247,
-            31.7388
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Biosphere_2",
-        "icon": "assets/icons/biosphere.svg",
-        "description": "A sealed artificial environment built to study ecological systems.",
-        "quote": "The biosphere does not belong to us; we belong to the biosphere.",
-        "quoteAuthor": "Mikhail Gorbachev"
-    },
-    {
+        "id": 18,
         "name": "Golden Gate Bridge",
         "type": "Wonder",
-        "game": [
-            "Civ VI: Gathering Storm",
-            "Civ VII"
-        ],
         "coordinates": [
             -122.4786,
             37.8199
         ],
         "wikipedia": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
-        "icon": "assets/icons/bridge.svg",
-        "description": "A suspension bridge spanning the Golden Gate strait in San Francisco.",
+        "description": "A suspension bridge spanning the Golden Gate strait in San Francisco, California.",
         "quote": "What a monument to the builders of our country—what a monument to their vision.",
-        "quoteAuthor": "Franklin D. Roosevelt"
+        "quoteAuthor": "Franklin D. Roosevelt",
+        "image": "assets/wonder/Golden_Gate_Bridge_(Civ6).png"
     },
     {
-        "name": "Venetian Arsenal",
+        "id": 19,
+        "name": "Great Bath",
         "type": "Wonder",
-        "game": [
-            "Civ VI"
-        ],
         "coordinates": [
-            12.3500,
-            45.4267
+            72.7871,
+            24.7555
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Venetian_Arsenal",
-        "icon": "assets/icons/arsenal.svg",
-        "description": "A complex of shipyards and armories in Venice.",
-        "quote": "Let the whole area be occupied by workshops and factories for everything useful to naval matters.",
-        "quoteAuthor": "Venetian Senate Decree"
+        "wikipedia": "https://en.wikipedia.org/wiki/Great_Bath,_Mohenjo-daro",
+        "description": "An ancient public water tank in the ruins of Mohenjo-daro in Sindh, Pakistan, part of the Indus Valley Civilization.",
+        "quote": "Waters of purification, waters of power, waters of life, come, sanctify this person.",
+        "quoteAuthor": "Ancient Indus Prayer",
+        "image": "assets/wonder/Great_Bath_(Civ6).png"
     },
     {
-        "name": "Kilwa Kisiwani",
+        "id": 20,
+        "name": "Great Library",
         "type": "Wonder",
-        "game": [
-            "Civ VI: Rise & Fall"
-        ],
         "coordinates": [
-            39.5000,
-            -8.9667
+            29.9119,
+            31.2089
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Kilwa_Kisiwani",
-        "icon": "assets/icons/ruins.svg",
-        "description": "A historical settlement on an island off the coast of Tanzania.",
-        "quote": "Kilwa becomes the most beautiful and well-constructed city in the whole world, where most houses are built of coral stone.",
-        "quoteAuthor": "Ibn Battuta"
+        "wikipedia": "https://en.wikipedia.org/wiki/Library_of_Alexandria",
+        "description": "One of the largest libraries of the ancient world, located in Alexandria, Egypt.",
+        "quote": "Medicine heals the body, but wisdom relieves the soul.",
+        "quoteAuthor": "Inscription over the door of the Library of Alexandria",
+        "image": "assets/wonder/Great_Library_(Civ6).png"
     },
     {
-        "name": "University of Sankore",
+        "id": 21,
+        "name": "Great Lighthouse",
         "type": "Wonder",
-        "game": [
-            "Civ VI: Rise & Fall"
-        ],
         "coordinates": [
-            -3.0040,
-            16.7742
+            29.8855,
+            31.2144
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Sankore_Madrasah",
-        "icon": "assets/icons/university.svg",
-        "description": "A significant educational center in Timbuktu during the Mali Empire.",
-        "quote": "When a scholar dies in Africa, it is as if a library has burnt down.",
-        "quoteAuthor": "Amadou Hampâté Bâ"
+        "wikipedia": "https://en.wikipedia.org/wiki/Lighthouse_of_Alexandria",
+        "description": "A lighthouse built by the Ptolemaic Kingdom of Ancient Egypt, one of the Seven Wonders of the Ancient World.",
+        "quote": "They that go down to the sea in ships, that do business in great waters; these see the works of the Lord, and his wonders in the deep.",
+        "quoteAuthor": "Psalm 107:23-24",
+        "image": "assets/wonder/Great_Lighthouse_(Civ6).png"
     },
     {
-        "name": "St. Basil's Cathedral",
+        "id": 22,
+        "name": "Great Zimbabwe",
         "type": "Wonder",
-        "game": [
-            "Civ VI"
-        ],
         "coordinates": [
-            37.6229,
-            55.7525
+            30.9287,
+            -20.2853
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral",
-        "icon": "assets/icons/cathedral.svg",
-        "description": "A church in Red Square in Moscow, Russia.",
-        "quote": "I have never seen a more beautiful architectural work on earth. Indeed, it is something that must be seen to be appreciated.",
-        "quoteAuthor": "John Steinbeck"
+        "wikipedia": "https://en.wikipedia.org/wiki/Great_Zimbabwe",
+        "description": "The ruins of an ancient city in Zimbabwe, built by the Shona civilization.",
+        "quote": "And they built strong and comely houses of stone that today amaze all who behold them.",
+        "quoteAuthor": "Hugh Tracey",
+        "image": "assets/wonder/Great_Zimbabwe_(Civ6).png"
     },
     {
+        "id": 23,
+        "name": "Hagia Sophia",
+        "type": "Wonder",
+        "coordinates": [
+            28.9784,
+            41.0086
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Hagia_Sophia",
+        "description": "A former Greek Orthodox Christian cathedral, later an Ottoman Imperial mosque, and now a museum in Istanbul, Turkey.",
+        "quote": "I have surpassed thee, O Solomon!",
+        "quoteAuthor": "Justinian I",
+        "image": "assets/wonder/Hagia_Sophia_(Civ6).png"
+    },
+    {
+        "id": 24,
+        "name": "Hanging Gardens",
+        "type": "Wonder",
+        "coordinates": [
+            44.4275,
+            32.5355
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Hanging_Gardens_of_Babylon",
+        "description": "One of the Seven Wonders of the Ancient World, described as a remarkable feat of engineering with an ascending series of tiered gardens.",
+        "quote": "The Hanging Gardens have plants cultivated above ground level, and the roots of the trees are embedded in an upper terrace rather than in the earth.",
+        "quoteAuthor": "Philo of Byzantium",
+        "image": "assets/wonder/Hanging_Gardens_(Civ6).png"
+    },
+    {
+        "id": 25,
+        "name": "Hermitage",
+        "type": "Wonder",
+        "coordinates": [
+            30.3141,
+            59.9410
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Hermitage_Museum",
+        "description": "A museum of art and culture in Saint Petersburg, Russia, founded in 1764 by Empress Catherine the Great.",
+        "quote": "Art is the most intense mode of individualism that the world has known.",
+        "quoteAuthor": "Oscar Wilde",
+        "image": "assets/wonder/Hermitage_(Civ6).png"
+    },
+    {
+        "id": 26,
+        "name": "Huey Teocalli",
+        "type": "Wonder",
+        "coordinates": [
+            -99.1227,
+            19.4253
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Templo_Mayor",
+        "description": "A temple in the main sacred precinct of the Aztec capital Tenochtitlan, now in modern Mexico City.",
+        "quote": "The city has temples, especially that dedicated to their chief god, which are so spacious that they contain large plazas, where more than 10,000 persons dance and celebrate on feast days.",
+        "quoteAuthor": "Hernán Cortés",
+        "image": "assets/wonder/Huey_Teocalli_(Civ6).png"
+    },
+    {
+        "id": 27,
         "name": "Jebel Barkal",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ VI"
-        ],
+        "type": "Wonder",
         "coordinates": [
-            31.8167,
-            18.5333
+            31.8291,
+            18.5341
         ],
         "wikipedia": "https://en.wikipedia.org/wiki/Jebel_Barkal",
-        "icon": "assets/icons/mountain.svg",
-        "description": "A small mountain in Sudan considered sacred by ancient Egyptians and Nubians.",
-        "quote": "This pure mountain... whose primeval stone was there from the beginning... the throne of Re... which Amun made his seat.",
-        "quoteAuthor": "Ancient Egyptian Texts"
+        "description": "A small mountain located on a large bend of the Nile River, in Sudan, considered sacred to the ancient Egyptians and Nubians.",
+        "quote": "This pure mountain with its gleaming peak... which is very far from the sky, but whose name is near to the sky.",
+        "quoteAuthor": "Ancient Egyptian Inscription",
+        "image": "assets/wonder/Jebel_Barkal_(Civ6).png"
     },
     {
-        "name": "Panama Canal",
+        "id": 28,
+        "name": "Kilwa Kisiwani",
         "type": "Wonder",
-        "game": [
-            "Civ VI: Gathering Storm"
-        ],
         "coordinates": [
-            -79.9209,
-            9.0811
+            39.5119,
+            -8.9605
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Panama_Canal",
-        "icon": "assets/icons/canal.svg",
-        "description": "A waterway connecting the Atlantic and Pacific Oceans through Panama.",
-        "quote": "The canal is an expression of that old and valid idea that the man who could make two blades of grass grow where one had grown before was a benefactor to mankind.",
-        "quoteAuthor": "David McCullough"
+        "wikipedia": "https://en.wikipedia.org/wiki/Kilwa_Kisiwani",
+        "description": "A medieval sultanate on an island off the coast of East Africa, in present-day Tanzania.",
+        "quote": "One of the most beautiful and well-constructed towns in the world, where most houses are built of coral stone.",
+        "quoteAuthor": "Ibn Battuta",
+        "image": "assets/wonder/Kilwa_Kisiwani_(Civ6).png"
     },
     {
+        "id": 29,
+        "name": "Kotoku-in",
+        "type": "Wonder",
+        "coordinates": [
+            139.5367,
+            35.3169
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Kōtoku-in",
+        "description": "A Buddhist temple with the famous Great Buddha of Kamakura, a large bronze statue of Amida Buddha.",
+        "quote": "When the visitor approaches the Great Buddha, he will be impressed at its colossal size, and feel its irresistible beauty.",
+        "quoteAuthor": "Kamakura Tourist Association",
+        "image": "assets/wonder/Kotoku-in_(Civ6).png"
+    },
+    {
+        "id": 30,
+        "name": "Machu Picchu",
+        "type": "Wonder",
+        "coordinates": [
+            -72.5429,
+            -13.1631
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Machu_Picchu",
+        "description": "A 15th-century Inca citadel set high in the Andes Mountains in Peru.",
+        "quote": "Few romances can ever surpass that of the granite citadel on top of the beetling precipices of Machu Picchu.",
+        "quoteAuthor": "Hiram Bingham",
+        "image": "assets/wonder/Machu_Picchu_(Civ6).png"
+    },
+    {
+        "id": 31,
+        "name": "Mausoleum at Halicarnassus",
+        "type": "Wonder",
+        "coordinates": [
+            27.4241,
+            37.0379
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus",
+        "description": "A tomb built between 353 and 350 BC at Halicarnassus (present-day Bodrum, Turkey) for Mausolus, a satrap in the Persian Empire.",
+        "quote": "This monument shall be a testimony to the fame of all; for Halicarnassus and its glory shall never die.",
+        "quoteAuthor": "Artemisia II of Caria",
+        "image": "assets/wonder/Mausoleum_at_Halicarnassus_(Civ6).png"
+    },
+    {
+        "id": 32,
+        "name": "Meenakshi Temple",
+        "type": "Wonder",
+        "coordinates": [
+            78.1197,
+            9.9252
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Meenakshi_Temple",
+        "description": "A historic Hindu temple located in the city of Madurai, India, dedicated to Goddess Parvati and Lord Shiva.",
+        "quote": "The beauty of the temple, the elaborate rituals, the throngs of pilgrims, the wafting smell of flowers—all these combine to create an atmosphere of enchantment.",
+        "quoteAuthor": "Architectural Heritage of South India",
+        "image": "assets/wonder/Meenakshi_Temple_(Civ6).png"
+    },
+    {
+        "id": 33,
         "name": "Mont St. Michel",
         "type": "Wonder",
-        "game": [
-            "Civ VI"
-        ],
         "coordinates": [
             -1.5114,
             48.6361
         ],
         "wikipedia": "https://en.wikipedia.org/wiki/Mont-Saint-Michel",
-        "icon": "assets/icons/mont.svg",
-        "description": "A tidal island with a medieval monastery in Normandy, France.",
-        "quote": "The wonder of the Western World, a Gothic-style Benedictine abbey dedicated to the archangel St. Michael.",
-        "quoteAuthor": "UNESCO"
+        "description": "A tidal island and mainland commune in Normandy, France, featuring a medieval monastery.",
+        "quote": "The abbey stands as one of the wonders of the Western world, a reminder of the Age of Faith when the monks raised their walls of granite to the glory of God.",
+        "quoteAuthor": "Henry Adams",
+        "image": "assets/wonder/Mont_St._Michel_(Civ6).png"
     },
     {
-        "name": "Delicate Arch",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ VII"
-        ],
-        "coordinates": [
-            -109.4995,
-            38.7437
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Delicate_Arch",
-        "icon": "assets/icons/arch.svg",
-        "description": "A freestanding natural arch located in Utah, USA.",
-        "quote": "The arch has an undeniable splendor that comes not just from its position against the sky, but from its size, symmetry, and distinctive shape.",
-        "quoteAuthor": "Edward Abbey"
-    },
-    {
-        "name": "Temple of Artemis",
+        "id": 34,
+        "name": "Oracle",
         "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
         "coordinates": [
-            27.3636,
-            37.9497
+            22.5011,
+            38.4824
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Temple_of_Artemis",
-        "icon": "assets/icons/temple.svg",
-        "description": "A Greek temple dedicated to the goddess Artemis, one of the Seven Wonders of the Ancient World.",
-        "quote": "I have seen the walls and Hanging Gardens of ancient Babylon, the statue of Olympian Zeus, the Colossus of Rhodes, the mighty work of the high Pyramids and the tomb of Mausolus. But when I saw the temple at Ephesus rising to the clouds, all these other wonders were put in the shade.",
-        "quoteAuthor": "Antipater of Sidon"
+        "wikipedia": "https://en.wikipedia.org/wiki/Delphi",
+        "description": "An ancient temple to Apollo at Delphi in Greece, home to a famous oracle who provided prophesies and guidance.",
+        "quote": "The ancient Oracle said that I was the wisest of all the Greeks. It is because I alone, of all the Greeks, know that I know nothing.",
+        "quoteAuthor": "Socrates",
+        "image": "assets/wonder/Oracle_(Civ6).png"
     },
     {
+        "id": 35,
+        "name": "Oxford University",
+        "type": "Wonder",
+        "coordinates": [
+            -1.2577,
+            51.7548
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/University_of_Oxford",
+        "description": "A collegiate research university in Oxford, England, and the oldest university in the English-speaking world.",
+        "quote": "The whole object of education is to develop the mind.",
+        "quoteAuthor": "John Stuart Mill",
+        "image": "assets/wonder/Oxford_University_(Civ6).png"
+    },
+    {
+        "id": 36,
+        "name": "Panama Canal",
+        "type": "Wonder",
+        "coordinates": [
+            -79.9209,
+            9.0784
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Panama_Canal",
+        "description": "An artificial waterway that connects the Atlantic and Pacific Oceans through Panama.",
+        "quote": "The land was divided, the world was united.",
+        "quoteAuthor": "Motto of Panama Canal",
+        "image": "assets/wonder/Panama_Canal_(Civ6).png"
+    },
+    {
+        "id": 37,
+        "name": "Petra",
+        "type": "Wonder",
+        "coordinates": [
+            35.4444,
+            30.3285
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Petra",
+        "description": "A historical and archaeological city in southern Jordan known for its rock-cut architecture.",
+        "quote": "A rose-red city half as old as time.",
+        "quoteAuthor": "John William Burgon",
+        "image": "assets/wonder/Petra_(Civ6).png"
+    },
+    {
+        "id": 38,
+        "name": "Potala Palace",
+        "type": "Wonder",
+        "coordinates": [
+            91.1170,
+            29.6554
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Potala_Palace",
+        "description": "A dzong fortress in Lhasa, Tibet, which was the winter palace of the Dalai Lamas.",
+        "quote": "We had the sky, up there, all speckled with stars, and we used to lay on our backs and look up at them, and discuss about whether they was made, or only just happened.",
+        "quoteAuthor": "Mark Twain",
+        "image": "assets/wonder/Potala_Palace_(Civ6).png"
+    },
+    {
+        "id": 39,
+        "name": "Pyramids",
+        "type": "Wonder",
+        "coordinates": [
+            31.1342,
+            29.9792
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "description": "Ancient monumental structures built in Egypt as tombs for the country's pharaohs.",
+        "quote": "Except the Pyramids of Egypt, there is nothing in the world more wonderful to see.",
+        "quoteAuthor": "Herodotus",
+        "image": "assets/wonder/Pyramids_(Civ6).png"
+    },
+    {
+        "id": 40,
+        "name": "Ruhr Valley",
+        "type": "Wonder",
+        "coordinates": [
+            7.0500,
+            51.4300
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Ruhr",
+        "description": "A major industrial region in western Germany, centered around the Ruhr River.",
+        "quote": "Industry is the soul of England. We proceed slow in invention, but what we have once well invented, we execute well.",
+        "quoteAuthor": "Thomas Fuller",
+        "image": "assets/wonder/Ruhr_Valley_(Civ6).png"
+    },
+    {
+        "id": 41,
+        "name": "St. Basil's Cathedral",
+        "type": "Wonder",
+        "coordinates": [
+            37.6230,
+            55.7525
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral",
+        "description": "A church in Red Square in Moscow, Russia, built from 1555 to 1561 on orders from Ivan the Terrible.",
+        "quote": "I have seen a most beautiful church: it is a veritable forest of colored cupolas spiring up into the sky.",
+        "quoteAuthor": "Alexander Solzhenitsyn",
+        "image": "assets/wonder/St._Basil's_Cathedral_(Civ6).png"
+    },
+    {
+        "id": 42,
+        "name": "Statue of Liberty",
+        "type": "Wonder",
+        "coordinates": [
+            -74.0445,
+            40.6892
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+        "description": "A colossal neoclassical sculpture on Liberty Island in New York Harbor, a gift from France to the United States.",
+        "quote": "Give me your tired, your poor, your huddled masses yearning to breathe free.",
+        "quoteAuthor": "Emma Lazarus",
+        "image": "assets/wonder/Statue_of_Liberty_(Civ6).png"
+    },
+    {
+        "id": 43,
         "name": "Statue of Zeus",
         "type": "Wonder",
-        "game": [
-            "Civ V"
-        ],
         "coordinates": [
             21.6300,
             37.6381
         ],
         "wikipedia": "https://en.wikipedia.org/wiki/Statue_of_Zeus_at_Olympia",
-        "icon": "assets/icons/zeus.svg",
-        "description": "A giant seated figure of Zeus, the king of the Greek gods, at Olympia.",
-        "quote": "...nor has anyone who has seen that statue ever been able to form a mental image that departs from that impression.",
-        "quoteAuthor": "Quintilian"
+        "description": "A giant seated figure of Zeus, king of the Greek gods, at Olympia, was counted as one of the Seven Wonders of the Ancient World.",
+        "quote": "One of the Seven Wonders; but it would have been less wonderful had they only shown Zeus, instead of Zeus and Olympia.",
+        "quoteAuthor": "Strabo",
+        "image": "assets/wonder/Statue_of_Zeus_(Civ6).png"
     },
     {
-        "name": "Mausoleum at Halicarnassus",
+        "id": 44,
+        "name": "Stonehenge",
         "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
         "coordinates": [
-            27.4240,
-            37.0379
+            -1.8262,
+            51.1789
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus",
-        "icon": "assets/icons/mausoleum.svg",
-        "description": "A tomb built for Mausolus, a satrap in the Persian Empire.",
-        "quote": "From the must of the mausoleum, the stone lions stare with unflinching eyes.",
-        "quoteAuthor": "Linda Pastan"
+        "wikipedia": "https://en.wikipedia.org/wiki/Stonehenge",
+        "description": "A prehistoric monument consisting of a ring of standing stones in Wiltshire, England.",
+        "quote": "Time crumbles things; everything grows old and is forgotten under the power of time.",
+        "quoteAuthor": "Aristotle",
+        "image": "assets/wonder/Stonehenge_(Civ6).png"
     },
     {
-        "name": "Kremlin",
+        "id": 45,
+        "name": "Sydney Opera House",
         "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
         "coordinates": [
-            37.6173,
-            55.7520
+            151.2153,
+            -33.8568
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Moscow_Kremlin",
-        "icon": "assets/icons/kremlin.svg",
-        "description": "A fortified complex in the center of Moscow.",
-        "quote": "The Kremlin is the heart of Moscow, the heart of Russia. And therein lies its timelessness and its magic.",
-        "quoteAuthor": "Arthur Koestler"
+        "wikipedia": "https://en.wikipedia.org/wiki/Sydney_Opera_House",
+        "description": "A multi-venue performing arts centre at Sydney Harbour in Sydney, Australia.",
+        "quote": "The sun did not know how beautiful its light was until it was reflected off this building.",
+        "quoteAuthor": "Louis Kahn",
+        "image": "assets/wonder/Sydney_Opera_House_(Civ6).png"
     },
     {
+        "id": 46,
+        "name": "Taj Mahal",
+        "type": "Wonder",
+        "coordinates": [
+            78.0422,
+            27.1751
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Taj_Mahal",
+        "description": "An ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra.",
+        "quote": "Not a piece of architecture, as other buildings are, but the proud passion of an emperor's love wrought in living stones.",
+        "quoteAuthor": "Sir Edwin Arnold",
+        "image": "assets/wonder/Taj_Mahal_(Civ6).png"
+    },
+    {
+        "id": 47,
+        "name": "Temple of Artemis",
+        "type": "Wonder",
+        "coordinates": [
+            27.3636,
+            37.9497
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Temple_of_Artemis",
+        "description": "A Greek temple dedicated to the goddess Artemis, one of the Seven Wonders of the Ancient World.",
+        "quote": "I have seen the walls and Hanging Gardens of ancient Babylon, the statue of Olympian Zeus, the Colossus of Rhodes, the mighty work of the high Pyramids and the tomb of Mausolus. But when I saw the temple at Ephesus rising to the clouds, all these other wonders were put in the shade.",
+        "quoteAuthor": "Antipater of Sidon",
+        "image": "assets/wonder/Temple_of_Artemis_(Civ6).png"
+    },
+    {
+        "id": 48,
         "name": "Terracotta Army",
         "type": "Wonder",
-        "game": [
-            "Civ VI"
-        ],
         "coordinates": [
-            109.2784,
-            34.3841
+            109.2785,
+            34.3843
         ],
         "wikipedia": "https://en.wikipedia.org/wiki/Terracotta_Army",
-        "icon": "assets/icons/terracotta.svg",
-        "description": "A collection of terracotta sculptures depicting the armies of Qin Shi Huang.",
-        "quote": "The Terracotta Army was an astonishing and precious archaeological discovery - life-sized ancient works of art that speak to us across the centuries.",
-        "quoteAuthor": "Neil MacGregor"
+        "description": "A collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China.",
+        "quote": "Behold the great terracotta warriors and horses: a magnificent work of art from more than 2,200 years ago.",
+        "quoteAuthor": "Chinese Tourism Bureau",
+        "image": "assets/wonder/Terracotta_Army_(Civ6).png"
     },
     {
-        "name": "Moai",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V"
-        ],
-        "coordinates": [
-            -109.4506,
-            -27.1155
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Moai",
-        "icon": "assets/icons/moai.svg",
-        "description": "Monolithic human figures carved by the Rapa Nui people on Easter Island.",
-        "quote": "The statues walked. Two hundred men could move them over a mile a day.",
-        "quoteAuthor": "Easter Island legend"
-    },
-    {
-        "name": "Global Seed Vault",
+        "id": 49,
+        "name": "Torre de Belém",
         "type": "Wonder",
-        "game": [
-            "Civ VII"
-        ],
         "coordinates": [
-            15.4614,
-            78.2381
+            -9.2159,
+            38.6916
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault",
-        "icon": "assets/icons/vault.svg",
-        "description": "A secure seed bank on the Norwegian island of Spitsbergen.",
-        "quote": "The Svalbard Global Seed Vault is the Noah's Ark for biodiversity of crops—a place where we keep safe for humanity the diversity of the crops that feed us.",
-        "quoteAuthor": "Crop Trust"
+        "wikipedia": "https://en.wikipedia.org/wiki/Belém_Tower",
+        "description": "A 16th-century fortification in Lisbon, Portugal, that served as a ceremonial gateway to the city.",
+        "quote": "The Tower of Belém rises from the river like a monument to Portugal's great Age of Discovery.",
+        "quoteAuthor": "Portuguese Heritage Guide",
+        "image": "assets/wonder/Torre_de_Belém_(Civ6).png"
     },
     {
-        "name": "Rock of Gibraltar",
-        "type": "Natural Wonder",
-        "game": [
-            "Civ V"
-        ],
-        "coordinates": [
-            -5.3451,
-            36.1429
-        ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Rock_of_Gibraltar",
-        "icon": "assets/icons/rock.svg",
-        "description": "A monolithic limestone promontory in Gibraltar.",
-        "quote": "The ancient Pillars of Hercules, one of which is Gibraltar, were thought to mark the end of the known world.",
-        "quoteAuthor": "Pliny the Elder"
-    },
-    {
-        "name": "Statue Garden",
+        "id": 50,
+        "name": "University of Sankore",
         "type": "Wonder",
-        "game": [
-            "Civ VII"
-        ],
         "coordinates": [
-            34.7913,
-            32.0704
+            -3.0042,
+            16.7758
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Sculpture_garden",
-        "icon": "assets/icons/garden.svg",
-        "description": "An outdoor garden dedicated to the exhibition of sculptures.",
-        "quote": "Art is not a mirror held up to reality, but a hammer with which to shape it.",
-        "quoteAuthor": "Bertolt Brecht"
+        "wikipedia": "https://en.wikipedia.org/wiki/Sankore_Madrasah",
+        "description": "A higher educational institution in Timbuktu, Mali, one of the world's oldest universities.",
+        "quote": "When a scholar dies in Africa, it is as if a library had burned down.",
+        "quoteAuthor": "Amadou Hampâté Bâ",
+        "image": "assets/wonder/University_of_Sankore_(Civ6).png"
     },
     {
-        "name": "Great Lighthouse",
+        "id": 51,
+        "name": "Venetian Arsenal",
         "type": "Wonder",
-        "game": [
-            "Civ V",
-            "Civ VI"
-        ],
         "coordinates": [
-            29.9121,
-            31.2142
+            12.3830,
+            45.4361
         ],
-        "wikipedia": "https://en.wikipedia.org/wiki/Lighthouse_of_Alexandria",
-        "icon": "assets/icons/lighthouse.svg",
-        "description": "One of the Seven Wonders of the Ancient World, a lighthouse built in Alexandria, Egypt.",
-        "quote": "The stars serve as eternal and distinctive beacons, guiding ships to safe harbor.",
-        "quoteAuthor": "Ptolemy"
+        "wikipedia": "https://en.wikipedia.org/wiki/Venetian_Arsenal",
+        "description": "A complex of former shipyards and armories in Venice, Italy, where the Venetian Republic's naval power was built.",
+        "quote": "Let the whole area be occupied by workshops and factories for everything useful to naval matters.",
+        "quoteAuthor": "Venetian Senate Decree",
+        "image": "assets/wonder/Venetian_Arsenal_(Civ6).png"
+    },
+    {
+        "id": 52,
+        "name": "Országház",
+        "type": "Wonder",
+        "coordinates": [
+            19.0454,
+            47.5070
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Hungarian_Parliament_Building",
+        "description": "The Hungarian Parliament Building, also known as Országház, is the seat of the National Assembly of Hungary in Budapest.",
+        "quote": "The Parliament of Budapest, one of the largest buildings of its kind in the world, is a symbol both of the Hungarian nation and its democracy.",
+        "quoteAuthor": "Hungarian Heritage Foundation",
+        "image": "assets/wonder/Országház_(Civ6).png"
     }
 ]
