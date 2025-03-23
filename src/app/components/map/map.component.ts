@@ -42,9 +42,11 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Clean up any map resources
+    // Clean up event listeners
     if (this.map) {
+      // Remove the map
       this.map.remove();
+      this.map = null;
     }
   }
 
@@ -68,7 +70,7 @@ export class MapComponent implements OnInit, OnDestroy {
       center: [20, 0],
       zoom: 2,
       minZoom: 2,
-      maxZoom: 8,
+      maxZoom: 12,
       zoomControl: false,
       // Remove worldCopyJump to prevent infinite scrolling
       worldCopyJump: false,
@@ -140,8 +142,8 @@ export class MapComponent implements OnInit, OnDestroy {
 
     const marker = this.markerMap.get(wonder.id);
     if (marker) {
-      // Fly to the wonder location
-      this.map.flyTo([wonder.coordinates[1], wonder.coordinates[0]], 6, {
+      // Fly to the wonder location with a deeper zoom
+      this.map.flyTo([wonder.coordinates[1], wonder.coordinates[0]], 8, {
         animate: true,
         duration: 1.5,
       });
@@ -180,6 +182,8 @@ export class MapComponent implements OnInit, OnDestroy {
       // Check if the wonder has an image to use as a pin
       if (wonder.image) {
         const isNatural = wonder.type === 'Natural Wonder';
+
+        // Use fixed size icons - no scaling with zoom
         const wonderIcon = this.L.icon({
           iconUrl: wonder.image,
           iconSize: [32, 32],

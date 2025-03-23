@@ -168,6 +168,18 @@ body {
   overflow: hidden;
 }
 
+.natural-wonder-image-icon,
+.wonder-image-icon {
+  transition: all 0.2s ease-in-out;
+}
+
+// Also ensure marker images are crisp
+.natural-wonder-image-icon img,
+.wonder-image-icon img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 /* Keep the existing wonder styling */
 .wonder-image-icon {
   border: 2px solid #ffc107; /* Gold border for world wonders */

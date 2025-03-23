@@ -1,6 +1,6 @@
 [
     {
-        "id": 1+52,
+        "id": 53,
         "name": "Bermuda Triangle",
         "type": "Natural Wonder",
         "coordinates": [
@@ -14,7 +14,7 @@
         "image": "assets/natural-wonder/Bermuda_Triangle_(Civ6).png"
     },
     {
-        "id": 2+52,
+        "id": 54,
         "name": "Chocolate Hills",
         "type": "Natural Wonder",
         "coordinates": [
@@ -28,7 +28,7 @@
         "image": "assets/natural-wonder/Chocolate_Hills_(Civ6).png"
     },
     {
-        "id": 3+52,
+        "id": 55,
         "name": "Cliffs of Dover",
         "type": "Natural Wonder",
         "coordinates": [
@@ -42,7 +42,7 @@
         "image": "assets/natural-wonder/Cliffs_of_Dover_(Civ6).png"
     },
     {
-        "id": 4+52,
+        "id": 56,
         "name": "Crater Lake",
         "type": "Natural Wonder",
         "coordinates": [
@@ -56,7 +56,7 @@
         "image": "assets/natural-wonder/Crater_Lake_(Civ6).png"
     },
     {
-        "id": 5+52,
+        "id": 57,
         "name": "Dead Sea",
         "type": "Natural Wonder",
         "coordinates": [
@@ -70,7 +70,7 @@
         "image": "assets/natural-wonder/Dead_Sea_(Civ6).png"
     },
     {
-        "id": 6+52,
+        "id": 58,
         "name": "Delicate Arch",
         "type": "Natural Wonder",
         "coordinates": [
@@ -84,7 +84,7 @@
         "image": "assets/natural-wonder/Delicate_Arch_(Civ6).png"
     },
     {
-        "id": 7+52,
+        "id": 59,
         "name": "Eye of the Sahara",
         "type": "Natural Wonder",
         "coordinates": [
@@ -98,7 +98,7 @@
         "image": "assets/natural-wonder/Eye_of_the_Sahara_(Civ6).png"
     },
     {
-        "id": 8+52,
+        "id": 60,
         "name": "Eyjafjallajökull",
         "type": "Natural Wonder",
         "coordinates": [
@@ -112,7 +112,7 @@
         "image": "assets/natural-wonder/Eyjafjallajökull_(Civ6).png"
     },
     {
-        "id": 9+52,
+        "id": 61,
         "name": "Fountain of Youth",
         "type": "Natural Wonder",
         "coordinates": [
@@ -126,7 +126,7 @@
         "image": "assets/natural-wonder/Fountain_of_Youth_(Civ6).png"
     },
     {
-        "id": 10+52,
+        "id": 62,
         "name": "Galápagos Islands",
         "type": "Natural Wonder",
         "coordinates": [
@@ -140,7 +140,7 @@
         "image": "assets/natural-wonder/Galápagos_Islands_(Civ6).png"
     },
     {
-        "id": 11+52,
+        "id": 63,
         "name": "Giant's Causeway",
         "type": "Natural Wonder",
         "coordinates": [
@@ -154,7 +154,7 @@
         "image": "assets/natural-wonder/Giant's_Causeway_(Civ6).png"
     },
     {
-        "id": 12+52,
+        "id": 64,
         "name": "Gobustan",
         "type": "Natural Wonder",
         "coordinates": [
@@ -168,7 +168,7 @@
         "image": "assets/natural-wonder/Gobustan_(Civ6).png"
     },
     {
-        "id": 13+52,
+        "id": 65,
         "name": "Great Barrier Reef",
         "type": "Natural Wonder",
         "coordinates": [
@@ -182,7 +182,7 @@
         "image": "assets/natural-wonder/Great_Barrier_Reef_(Civ6).png"
     },
     {
-        "id": 14+52,
+        "id": 66,
         "name": "Hạ Long Bay",
         "type": "Natural Wonder",
         "coordinates": [
@@ -196,7 +196,7 @@
         "image": "assets/natural-wonder/Hạ_Long_Bay_(Civ6).png"
     },
     {
-        "id": 15+52,
+        "id": 67,
         "name": "Ik-Kil",
         "type": "Natural Wonder",
         "coordinates": [
@@ -210,7 +210,7 @@
         "image": "assets/natural-wonder/Ik-kil_(Civ6).png"
     },
     {
-        "id": 16+52,
+        "id": 68,
         "name": "Lake Retba",
         "type": "Natural Wonder",
         "coordinates": [
@@ -224,7 +224,7 @@
         "image": "assets/natural-wonder/Lake_Retba_(Civ6).png"
     },
     {
-        "id": 17+52,
+        "id": 69,
         "name": "Lysefjord",
         "type": "Natural Wonder",
         "coordinates": [
@@ -238,7 +238,7 @@
         "image": "assets/natural-wonder/Lysefjord_(Civ6).png"
     },
     {
-        "id": 18+52,
+        "id": 70,
         "name": "Mato Tipila",
         "type": "Natural Wonder",
         "coordinates": [
@@ -252,7 +252,7 @@
         "image": "assets/natural-wonder/Mato_Tipila_(Civ6).png"
     },
     {
-        "id": 19+52,
+        "id": 71,
         "name": "Matterhorn",
         "type": "Natural Wonder",
         "coordinates": [
@@ -266,7 +266,7 @@
         "image": "assets/natural-wonder/Matterhorn_(Civ6).png"
     },
     {
-        "id": 20+52,
+        "id": 72,
         "name": "Mount Everest",
         "type": "Natural Wonder",
         "coordinates": [
@@ -280,7 +280,7 @@
         "image": "assets/natural-wonder/Mount_Everest_(Civ6).png"
     },
     {
-        "id": 21+52,
+        "id": 73,
         "name": "Mount Kilimanjaro",
         "type": "Natural Wonder",
         "coordinates": [
@@ -294,7 +294,7 @@
         "image": "assets/natural-wonder/Mount_Kilimanjaro_(Civ6).png"
     },
     {
-        "id": 22+52,
+        "id": 74,
         "name": "Mount Roraima",
         "type": "Natural Wonder",
         "coordinates": [
@@ -308,7 +308,7 @@
         "image": "assets/natural-wonder/Mount_Roraima_(Civ6).png"
     },
     {
-        "id": 23+52,
+        "id": 75,
         "name": "Mount Vesuvius",
         "type": "Natural Wonder",
         "coordinates": [
@@ -322,7 +322,7 @@
         "image": "assets/natural-wonder/Mount_Vesuvius_(Civ6).png"
     },
     {
-        "id": 24+52,
+        "id": 76,
         "name": "Pamukkale",
         "type": "Natural Wonder",
         "coordinates": [
@@ -336,7 +336,7 @@
         "image": "assets/natural-wonder/Pamukkale_(Civ6).png"
     },
     {
-        "id": 25+52,
+        "id": 77,
         "name": "Paititi",
         "type": "Natural Wonder",
         "coordinates": [
@@ -350,7 +350,7 @@
         "image": "assets/natural-wonder/Paititi_(Civ6).png"
     },
     {
-        "id": 26+52,
+        "id": 78,
         "name": "Pantanal",
         "type": "Natural Wonder",
         "coordinates": [
@@ -364,7 +364,7 @@
         "image": "assets/natural-wonder/Pantanal_(Civ6).png"
     },
     {
-        "id": 27+52,
+        "id": 79,
         "name": "Torres del Paine",
         "type": "Natural Wonder",
         "coordinates": [
@@ -378,7 +378,7 @@
         "image": "assets/natural-wonder/Torres_del_Paine_(Civ6).png"
     },
     {
-        "id": 28+52,
+        "id": 80,
         "name": "Tsingy de Bemaraha",
         "type": "Natural Wonder",
         "coordinates": [
@@ -392,7 +392,7 @@
         "image": "assets/natural-wonder/Tsingy_de_Bemaraha_(Civ6).png"
     },
     {
-        "id": 29+52,
+        "id": 81,
         "name": "Ubsunur Hollow",
         "type": "Natural Wonder",
         "coordinates": [
@@ -406,7 +406,7 @@
         "image": "assets/natural-wonder/Ubsunur_Hollow_(Civ6).png"
     },
     {
-        "id": 30+52,
+        "id": 82,
         "name": "Uluru",
         "type": "Natural Wonder",
         "coordinates": [
@@ -420,7 +420,7 @@
         "image": "assets/natural-wonder/Uluru_(Civ6).png"
     },
     {
-        "id": 31+52,
+        "id": 83,
         "name": "Yosemite",
         "type": "Natural Wonder",
         "coordinates": [
@@ -434,7 +434,7 @@
         "image": "assets/natural-wonder/Yosemite_(Civ6).png"
     },
     {
-        "id": 32+52,
+        "id": 84,
         "name": "Zhangye Danxia",
         "type": "Natural Wonder",
         "coordinates": [
