@@ -23,10 +23,17 @@ jobs:
       - name: Build the project
         run: npm run build -- --base-href=/worldmap/
 
-      - name: Copy files to root
-        run: |
-          mkdir -p temp_deploy
-          cp -r dist/worldmap/browser/* temp_deploy/
+      - name: Create temp directory
+        run: mkdir -p temp_deploy
+
+      - name: List files before copy
+        run: ls -l dist/worldmap/browser
+
+      - name: Copy files to temp directory
+        run: cp -r dist/worldmap/browser/* temp_deploy/
+
+      - name: List files after copy
+        run: ls -l temp_deploy
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
