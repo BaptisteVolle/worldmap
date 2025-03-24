@@ -49,9 +49,9 @@ jobs:
         run: |
           git config --global user.name "BaptisteVolle"
           git config --global user.email "baptiste.volle@etu.imt-nord-europe.fr"
-          git init
+          git checkout gh-pages || git checkout --orphan gh-pages
+          rm -rf ./*
+          cp -r _site/. .
           git add -A
           git commit -m "Deploy to GitHub Pages"
-          git remote add origin https://github.com/BaptisteVolle/worldmap.git
-          git checkout -b gh-pages
           git push -f origin gh-pages
