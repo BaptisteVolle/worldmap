@@ -1,0 +1,450 @@
+[
+    {
+        "id": 53,
+        "name": "Bermuda Triangle",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -64.7494,
+            32.3018
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Bermuda_Triangle",
+        "description": "A region in the western part of the North Atlantic Ocean where a number of aircraft and ships are said to have disappeared under mysterious circumstances.",
+        "quote": "This place has become known as a graveyard of ships and planes, swallowing vessels without a trace.",
+        "quoteAuthor": "Maritime Lore",
+        "image": "assets/natural-wonder/Bermuda_Triangle_(Civ6).png"
+    },
+    {
+        "id": 54,
+        "name": "Chocolate Hills",
+        "type": "Natural Wonder",
+        "coordinates": [
+            124.1167,
+            9.8333
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Chocolate_Hills",
+        "description": "A geological formation in Bohol Province, Philippines, consisting of at least 1,268 hills spread over an area of more than 50 square kilometers.",
+        "quote": "They look like chocolate kisses when the grass turns brown in the dry season, giving them their appealing and unusual name.",
+        "quoteAuthor": "Tourist Guide to the Philippines",
+        "image": "assets/natural-wonder/Chocolate_Hills_(Civ6).png"
+    },
+    {
+        "id": 55,
+        "name": "Cliffs of Dover",
+        "type": "Natural Wonder",
+        "coordinates": [
+            1.3542,
+            51.1270
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/White_Cliffs_of_Dover",
+        "description": "The white chalk cliffs that face the Strait of Dover and France, part of the North Downs formation.",
+        "quote": "There'll be bluebirds over the white cliffs of Dover, tomorrow, just you wait and see.",
+        "quoteAuthor": "Vera Lynn",
+        "image": "assets/natural-wonder/Cliffs_of_Dover_(Civ6).png"
+    },
+    {
+        "id": 56,
+        "name": "Crater Lake",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -122.1083,
+            42.9446
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Crater_Lake",
+        "description": "A lake in the caldera of Mount Mazama in Oregon, known for its deep blue color and water clarity.",
+        "quote": "The lake is deep, placid, blue, a heaven-reflecting mirror which bears upon its face no record of the cataclysm that created it.",
+        "quoteAuthor": "National Park Service",
+        "image": "assets/natural-wonder/Crater_Lake_(Civ6).png"
+    },
+    {
+        "id": 57,
+        "name": "Dead Sea",
+        "type": "Natural Wonder",
+        "coordinates": [
+            35.5000,
+            31.5000
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Dead_Sea",
+        "description": "A salt lake bordered by Jordan to the east and Israel and the West Bank to the west, known for its high salinity that prevents macroscopic aquatic organisms from living in it.",
+        "quote": "The water, saturated with a high percentage of salts and minerals, has amazing healing and beautifying properties.",
+        "quoteAuthor": "Middle Eastern Tourism Guide",
+        "image": "assets/natural-wonder/Dead_Sea_(Civ6).png"
+    },
+    {
+        "id": 58,
+        "name": "Delicate Arch",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -109.5992,
+            38.7436
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Delicate_Arch",
+        "description": "A famous freestanding natural arch located in Arches National Park, Utah, USA.",
+        "quote": "It stands as a symbol of the grandeur and diversity of the American landscape, with its remarkable design seeming to defy gravity.",
+        "quoteAuthor": "Utah Department of Tourism",
+        "image": "assets/natural-wonder/Delicate_Arch_(Civ6).png"
+    },
+    {
+        "id": 59,
+        "name": "Eye of the Sahara",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -11.3922,
+            21.1269
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Richat_Structure",
+        "description": "Also known as the Richat Structure, it's a prominent circular geological feature in the Sahara Desert, visible from space.",
+        "quote": "Like a giant eye gazing at the heavens, this mysterious structure has puzzled scientists since it was first photographed from space.",
+        "quoteAuthor": "African Geographic",
+        "image": "assets/natural-wonder/Eye_of_the_Sahara_(Civ6).png"
+    },
+    {
+        "id": 60,
+        "name": "Eyjafjallajökull",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -19.6167,
+            63.6333
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Eyjafjallaj%C3%B6kull",
+        "description": "A volcano completely covered by an ice cap in Iceland, which erupted in 2010 causing massive air travel disruption.",
+        "quote": "The name may be unpronounceable to most, but its 2010 eruption made this Icelandic volcano world-famous overnight.",
+        "quoteAuthor": "Icelandic Tourist Board",
+        "image": "assets/natural-wonder/Eyjafjallajökull_(Civ6).png"
+    },
+    {
+        "id": 61,
+        "name": "Fountain of Youth",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -81.3133,
+            29.9083
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Fountain_of_Youth",
+        "description": "A legendary spring that supposedly restores the youth of anyone who drinks or bathes in its waters.",
+        "quote": "Many brave men had searched for the Fountain of Youth, not knowing that it is not a fountain, but a wellspring within ourselves.",
+        "quoteAuthor": "Spanish Explorer's Journal",
+        "image": "assets/natural-wonder/Fountain_of_Youth_(Civ6).png"
+    },
+    {
+        "id": 62,
+        "name": "Galápagos Islands",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -91.1231,
+            -0.7593
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands",
+        "description": "An archipelago of volcanic islands in the Pacific Ocean, known for their vast number of endemic species that inspired Charles Darwin's theory of evolution.",
+        "quote": "In the Galápagos Islands I found myself face to face with the causes of evolution. It was here that the creative powers of nature were revealed to me.",
+        "quoteAuthor": "Charles Darwin",
+        "image": "assets/natural-wonder/Galápagos_Islands_(Civ6).png"
+    },
+    {
+        "id": 63,
+        "name": "Giant's Causeway",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -6.5119,
+            55.2408
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Giant%27s_Causeway",
+        "description": "An area of about 40,000 interlocking basalt columns, the result of an ancient volcanic fissure eruption in Northern Ireland.",
+        "quote": "According to legend, the columns are the remains of a causeway built by a giant. The story goes that the Irish giant Fionn was challenged to a fight by the Scottish giant Benandonner.",
+        "quoteAuthor": "Irish Folklore",
+        "image": "assets/natural-wonder/Giant's_Causeway_(Civ6).png"
+    },
+    {
+        "id": 64,
+        "name": "Gobustan",
+        "type": "Natural Wonder",
+        "coordinates": [
+            49.3742,
+            40.1071
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Gobustan_National_Park",
+        "description": "A national park in Azerbaijan featuring ancient rock carvings, mud volcanoes, and gas-stones.",
+        "quote": "The petroglyphs of Gobustan are artistic chronicles of the past which reflect the history of this region for nearly 15,000 years.",
+        "quoteAuthor": "UNESCO World Heritage Listing",
+        "image": "assets/natural-wonder/Gobustan_(Civ6).png"
+    },
+    {
+        "id": 65,
+        "name": "Great Barrier Reef",
+        "type": "Natural Wonder",
+        "coordinates": [
+            146.5753,
+            -18.2871
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Great_Barrier_Reef",
+        "description": "The world's largest coral reef system off the coast of Queensland, Australia, composed of over 2,900 individual reefs and 900 islands.",
+        "quote": "The Great Barrier Reef is the world's largest living structure, visible even from space.",
+        "quoteAuthor": "National Geographic",
+        "image": "assets/natural-wonder/Great_Barrier_Reef_(Civ6).png"
+    },
+    {
+        "id": 66,
+        "name": "Hạ Long Bay",
+        "type": "Natural Wonder",
+        "coordinates": [
+            107.0250,
+            20.9100
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/H%E1%BA%A1_Long_Bay",
+        "description": "A UNESCO World Heritage Site in Vietnam known for its emerald waters and thousands of towering limestone islands topped by rainforests.",
+        "quote": "The bay, with its thousands of islands rising from the emerald waters, is a vision of ethereal beauty.",
+        "quoteAuthor": "Vietnamese Tourism Authority",
+        "image": "assets/natural-wonder/Hạ_Long_Bay_(Civ6).png"
+    },
+    {
+        "id": 67,
+        "name": "Ik-Kil",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -88.5667,
+            20.6667
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Ik_Kil",
+        "description": "A cenote (sinkhole) near Chichen Itza in the Yucatán Peninsula of Mexico, considered sacred by the ancient Maya.",
+        "quote": "The cenote is a perfect circle, with water so clear and blue that it appears to be from another world. Vines hang down from the surface, adding to its mystical appearance.",
+        "quoteAuthor": "Mexican Travel Journal",
+        "image": "assets/natural-wonder/Ik-kil_(Civ6).png"
+    },
+    {
+        "id": 68,
+        "name": "Lake Retba",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -17.2333,
+            14.8333
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Lake_Retba",
+        "description": "Also known as Lac Rose (Pink Lake), it's known for its pink waters caused by Dunaliella salina algae and its high salt content.",
+        "quote": "The water is colored by salt-loving microorganisms that produce a red pigment to absorb the sunlight, giving the lake its unique pink color.",
+        "quoteAuthor": "Senegalese Ministry of Tourism",
+        "image": "assets/natural-wonder/Lake_Retba_(Civ6).png"
+    },
+    {
+        "id": 69,
+        "name": "Lysefjord",
+        "type": "Natural Wonder",
+        "coordinates": [
+            6.3423,
+            59.0556
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Lysefjord",
+        "description": "A fjord in southwestern Norway known for steep cliff faces like Preikestolen (Pulpit Rock) and Kjeragbolten.",
+        "quote": "The sheer magnitude of the cliffs, rising a thousand meters straight up from the fjord, is a humbling experience for any traveler.",
+        "quoteAuthor": "Norwegian Travel Guide",
+        "image": "assets/natural-wonder/Lysefjord_(Civ6).png"
+    },
+    {
+        "id": 70,
+        "name": "Mato Tipila",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -104.7156,
+            44.5903
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Devils_Tower",
+        "description": "Also known as Devils Tower, it's a laccolithic butte composed of igneous rock in the Bear Lodge Mountains in Wyoming, USA.",
+        "quote": "According to the Native American tribes of the northern plains, a group of girls were chased by bears. The Great Spirit raised the ground beneath them, creating this tower. The bears tried to climb the rock, leaving claw marks on the sides.",
+        "quoteAuthor": "Lakota Legend",
+        "image": "assets/natural-wonder/Mato_Tipila_(Civ6).png"
+    },
+    {
+        "id": 71,
+        "name": "Matterhorn",
+        "type": "Natural Wonder",
+        "coordinates": [
+            7.6583,
+            45.9764
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Matterhorn",
+        "description": "A mountain in the Alps on the border between Switzerland and Italy, known for its pyramidal peak.",
+        "quote": "The Matterhorn compels the attention of all who look upon it. It is a peak apart, high and alone, a severed pyramid soaring unreasonably into the sky.",
+        "quoteAuthor": "Edward Whymper",
+        "image": "assets/natural-wonder/Matterhorn_(Civ6).png"
+    },
+    {
+        "id": 72,
+        "name": "Mount Everest",
+        "type": "Natural Wonder",
+        "coordinates": [
+            86.9250,
+            27.9881
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Mount_Everest",
+        "description": "Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas between Nepal and Chinese Tibet.",
+        "quote": "The highest mountain on earth is the ultimate climbing challenge. Its very name, Everest, has become synonymous with the highest achievement.",
+        "quoteAuthor": "Edmund Hillary",
+        "image": "assets/natural-wonder/Mount_Everest_(Civ6).png"
+    },
+    {
+        "id": 73,
+        "name": "Mount Kilimanjaro",
+        "type": "Natural Wonder",
+        "coordinates": [
+            37.3556,
+            -3.0674
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro",
+        "description": "The highest mountain in Africa, a dormant volcano in Tanzania.",
+        "quote": "The snows of Kilimanjaro are a paradox on the equator, a marvel of nature that defies the very notion of Africa as a hot continent.",
+        "quoteAuthor": "Tanzanian Tourist Board",
+        "image": "assets/natural-wonder/Mount_Kilimanjaro_(Civ6).png"
+    },
+    {
+        "id": 74,
+        "name": "Mount Roraima",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -60.7818,
+            5.1446
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Mount_Roraima",
+        "description": "The highest of the Pakaraima chain of tepui plateaus in South America, where the borders of Brazil, Guyana, and Venezuela meet.",
+        "quote": "The strange, flat-topped mountain stood like an island lost in time, shrouded in mystery and clouds.",
+        "quoteAuthor": "Sir Arthur Conan Doyle",
+        "image": "assets/natural-wonder/Mount_Roraima_(Civ6).png"
+    },
+    {
+        "id": 75,
+        "name": "Mount Vesuvius",
+        "type": "Natural Wonder",
+        "coordinates": [
+            14.4294,
+            40.8212
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Mount_Vesuvius",
+        "description": "A somma-stratovolcano located on the Gulf of Naples in Italy, best known for its eruption in AD 79 that led to the burying and destruction of Pompeii and Herculaneum.",
+        "quote": "The most famous volcano in the world was quiet, as it often deceptively is before erupting violently to reshape the landscape and history.",
+        "quoteAuthor": "Pliny the Younger",
+        "image": "assets/natural-wonder/Mount_Vesuvius_(Civ6).png"
+    },
+    {
+        "id": 76,
+        "name": "Pamukkale",
+        "type": "Natural Wonder",
+        "coordinates": [
+            29.1203,
+            37.9249
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Pamukkale",
+        "description": "A site in Turkey containing hot springs and travertine terraces of carbonate minerals left by flowing water.",
+        "quote": "The gleaming white calcite shelves, terraces and ridges look like cotton, which is why the Turks call this place 'Cotton Castle.'",
+        "quoteAuthor": "Turkish Travel Guide",
+        "image": "assets/natural-wonder/Pamukkale_(Civ6).png"
+    },
+    {
+        "id": 77,
+        "name": "Paititi",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -71.0000,
+            -13.0000
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Paititi",
+        "description": "A legendary Incan lost city or utopian rich land supposedly somewhere in the rainforests east of the Andes, untouched by Western colonizers.",
+        "quote": "The mythical lost city of gold that drove many explorers to search the depths of South American jungles, none of whom ever returned with proof of its existence.",
+        "quoteAuthor": "Explorer's Journal",
+        "image": "assets/natural-wonder/Paititi_(Civ6).png"
+    },
+    {
+        "id": 78,
+        "name": "Pantanal",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -57.0000,
+            -18.0000
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Pantanal",
+        "description": "The world's largest tropical wetland area located mostly in the Brazilian state of Mato Grosso do Sul, known for its biodiversity.",
+        "quote": "This vast tropical wetland is home to the greatest concentration of wildlife in South America.",
+        "quoteAuthor": "Brazilian Ministry of Environment",
+        "image": "assets/natural-wonder/Pantanal_(Civ6).png"
+    },
+    {
+        "id": 79,
+        "name": "Torres del Paine",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -72.9667,
+            -51.0000
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Torres_del_Paine_National_Park",
+        "description": "A national park in Chilean Patagonia featuring mountains, glaciers, lakes, and rivers.",
+        "quote": "The three granite towers from which the park takes its name are spectacular natural monuments that soar above the Patagonian steppe.",
+        "quoteAuthor": "Chilean National Tourism Service",
+        "image": "assets/natural-wonder/Torres_del_Paine_(Civ6).png"
+    },
+    {
+        "id": 80,
+        "name": "Tsingy de Bemaraha",
+        "type": "Natural Wonder",
+        "coordinates": [
+            44.7500,
+            -18.6667
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Tsingy_de_Bemaraha_National_Park",
+        "description": "A karst limestone formation in western Madagascar featuring a forest of limestone needles.",
+        "quote": "The name 'tsingy' translates to 'where one cannot walk barefoot,' which perfectly describes this labyrinth of razor-sharp limestone spikes.",
+        "quoteAuthor": "Malagasy Proverb",
+        "image": "assets/natural-wonder/Tsingy_de_Bemaraha_(Civ6).png"
+    },
+    {
+        "id": 81,
+        "name": "Ubsunur Hollow",
+        "type": "Natural Wonder",
+        "coordinates": [
+            93.6500,
+            50.4167
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Ubsunur_Hollow",
+        "description": "A transboundary biosphere reserve shared by Mongolia and Russia that encompasses a diverse set of ecosystems.",
+        "quote": "Within this one hollow, one can find all of Central Asia's ecosystems: from desert to alpine tundra, creating a natural laboratory for studying how climate change affects biodiversity.",
+        "quoteAuthor": "UNESCO World Heritage Committee",
+        "image": "assets/natural-wonder/Ubsunur_Hollow_(Civ6).png"
+    },
+    {
+        "id": 82,
+        "name": "Uluru",
+        "type": "Natural Wonder",
+        "coordinates": [
+            131.0369,
+            -25.3444
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Uluru",
+        "description": "A large sandstone rock formation in the Northern Territory of Australia, also known as Ayers Rock.",
+        "quote": "The great red monolith of Uluru stands as a timeless monument in the vast, arid landscape of the Australian Outback, sacred to the indigenous Anangu people.",
+        "quoteAuthor": "Aboriginal Dreamtime Story",
+        "image": "assets/natural-wonder/Uluru_(Civ6).png"
+    },
+    {
+        "id": 83,
+        "name": "Yosemite",
+        "type": "Natural Wonder",
+        "coordinates": [
+            -119.5936,
+            37.7490
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Yosemite_Valley",
+        "description": "A glacial valley in California's Sierra Nevada mountains, known for its waterfalls, giant sequoia trees, and granite cliffs like El Capitan and Half Dome.",
+        "quote": "No temple made with human hands can compare with Yosemite. Every rock in its walls seems to glow with life.",
+        "quoteAuthor": "John Muir",
+        "image": "assets/natural-wonder/Yosemite_(Civ6).png"
+    },
+    {
+        "id": 84,
+        "name": "Zhangye Danxia",
+        "type": "Natural Wonder",
+        "coordinates": [
+            100.1333,
+            38.9333
+        ],
+        "wikipedia": "https://en.wikipedia.org/wiki/Zhangye_National_Geopark",
+        "description": "A landform of reddish sandstone that has been eroded to create unusual rock formations in China.",
+        "quote": "The rainbow mountains of Zhangye appear as if a divine painter had spilled their palette across the landscape.",
+        "quoteAuthor": "Chinese Geographic Society",
+        "image": "assets/natural-wonder/Zhangye_Danxia_(Civ6).png"
+    }
+]
