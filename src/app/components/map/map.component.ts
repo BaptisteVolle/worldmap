@@ -11,6 +11,8 @@ import {
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Wonder } from '../../models/wonder.model';
 
+import * as L from 'leaflet';
+
 @Component({
   selector: 'app-map',
   standalone: true,
@@ -25,15 +27,13 @@ export class MapComponent implements OnInit, OnDestroy {
 
   private map: any;
   private wonderMarkers: any;
-  private L: any;
+  public L: any = L; // Make L public
   private markerMap: Map<number, any> = new Map();
 
   private mapLayers = {
-    terrain: null,
     voyager: null,
     dark: null,
     satellite: null,
-    toner: null,
     comic: null,
     positron: null,
   };
@@ -42,11 +42,8 @@ export class MapComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      import('leaflet').then((L) => {
-        this.L = L;
-        this.initMap();
-        this.displayWonders();
-      });
+      this.initMap();
+      this.displayWonders();
     }
   }
 
@@ -105,19 +102,6 @@ export class MapComponent implements OnInit, OnDestroy {
       }
     );
 
-    this.mapLayers.terrain = this.L.tileLayer(
-      'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-      {
-        attribution:
-          'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a>',
-        maxZoom: 17,
-        bounds: [
-          [-85, -180],
-          [85, 180],
-        ],
-      }
-    );
-
     this.mapLayers.dark = this.L.tileLayer(
       'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
       {
@@ -152,19 +136,6 @@ export class MapComponent implements OnInit, OnDestroy {
         attribution:
           'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
         maxZoom: 18,
-        bounds: [
-          [-85, -180],
-          [85, 180],
-        ],
-      }
-    );
-
-    this.mapLayers.toner = this.L.tileLayer(
-      'https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}.png',
-      {
-        attribution:
-          'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        maxZoom: 20,
         bounds: [
           [-85, -180],
           [85, 180],
@@ -213,12 +184,10 @@ export class MapComponent implements OnInit, OnDestroy {
       const div = this.L.DomUtil.create('div', 'map-style-control');
       div.innerHTML = `
         <div class="map-style-title">Map Style</div>
-        <a href="#" class="style-option active" data-style="terrain">Terrain</a>
-        <a href="#" class="style-option" data-style="standard">Standard</a>
+        <a href="#" class="style-option active" data-style="standard">Standard</a>
         <a href="#" class="style-option" data-style="dark">Dark</a>
         <a href="#" class="style-option" data-style="light">Light</a>
         <a href="#" class="style-option" data-style="satellite">Satellite</a>
-        <a href="#" class="style-option" data-style="toner">B&W</a>
         <a href="#" class="style-option" data-style="comic">Comic</a>
       `;
 
@@ -253,9 +222,6 @@ export class MapComponent implements OnInit, OnDestroy {
 
         const style = option.getAttribute('data-style');
         switch (style) {
-          case 'terrain':
-            this.mapLayers.terrain.addTo(this.map);
-            break;
           case 'standard':
             this.mapLayers.voyager.addTo(this.map);
             break;
@@ -268,14 +234,11 @@ export class MapComponent implements OnInit, OnDestroy {
           case 'satellite':
             this.mapLayers.satellite.addTo(this.map);
             break;
-          case 'toner':
-            this.mapLayers.toner.addTo(this.map);
-            break;
           case 'comic':
             this.mapLayers.comic.addTo(this.map);
             break;
           default:
-            this.mapLayers.terrain.addTo(this.map);
+            this.mapLayers.positron.addTo(this.map);
         }
       });
 
@@ -285,6 +248,7 @@ export class MapComponent implements OnInit, OnDestroy {
           option.click();
         }
       });
+
       option.setAttribute('tabindex', '0');
       option.setAttribute('role', 'button');
       option.setAttribute(
