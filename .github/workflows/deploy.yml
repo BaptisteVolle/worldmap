@@ -55,3 +55,12 @@ jobs:
             echo "Found build output in dist/browser"
             cp -r dist/browser/* _site/
           fi
+
+          # Create .nojekyll file to bypass Jekyll processing
+          touch _site/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
+        with:
+          branch: gh-pages
+          folder: _site
