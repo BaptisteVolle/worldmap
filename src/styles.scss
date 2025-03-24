@@ -146,26 +146,29 @@ body {
   }
 }
 
-/* Custom popup class */
 .wonder-custom-popup {
-  .leaflet-popup-content {
-    margin: 0;
-    width: auto !important;
+  .leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
   }
 
-  /* Ensures popup is positioned correctly */
   &.leaflet-popup {
     margin-bottom: 30px;
   }
 }
 
-/* Add natural wonder styling */
+/* Enhance marker styling */
 .natural-wonder-image-icon {
-  border: 2px solid #4caf50; /* Green border for natural wonders */
+  border: 3px solid #4caf50; /* Thicker green border */
   border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  background-color: rgba(76, 175, 80, 0.2); /* Light green background */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  background-color: rgba(76, 175, 80, 0.3); /* More visible background */
   overflow: hidden;
+
+  /* Add a glow effect */
+  &:hover {
+    box-shadow: 0 0 12px #4caf50, 0 3px 8px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .natural-wonder-image-icon,
@@ -180,13 +183,17 @@ body {
   image-rendering: crisp-edges;
 }
 
-/* Keep the existing wonder styling */
 .wonder-image-icon {
-  border: 2px solid #ffc107; /* Gold border for world wonders */
+  border: 3px solid #ff9800; /* Thicker orange border - more visible than gold */
   border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  background-color: rgba(255, 193, 7, 0.2); /* Light gold background */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 152, 0, 0.3); /* More visible background */
   overflow: hidden;
+
+  /* Add a glow effect */
+  &:hover {
+    box-shadow: 0 0 12px #ff9800, 0 3px 8px rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* Fix for popups near edges */
@@ -196,4 +203,71 @@ body {
 
 mat-divider {
   margin: 16px 0;
+}
+/* Add this to your styles.scss file */
+
+// Add to your map.component.scss file
+
+.map-style-control {
+  background-color: white;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  min-width: 100px;
+
+  .map-style-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #555;
+  }
+
+  .style-option {
+    display: block !important;
+    padding: 6px 10px !important;
+    margin-bottom: 4px !important;
+    text-decoration: none !important;
+    color: #333;
+    font-size: 13px;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+    text-align: left;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #f5f5f5;
+      color: #000;
+      transform: translateX(2px);
+    }
+
+    &.active {
+      background-color: #e3f2fd;
+      font-weight: bold;
+      color: #1976d2;
+      border-left: 3px solid #1976d2;
+      padding-left: 7px !important;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.comic-style-map {
+  filter: saturate(1.4) contrast(1.1) brightness(1.1);
+}
+
+/* Override Leaflet's default styles specifically for our control */
+.leaflet-touch .map-style-control a.style-option {
+  width: auto !important;
+  height: auto !important;
+  line-height: 1.4 !important;
 }
