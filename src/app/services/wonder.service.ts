@@ -31,9 +31,6 @@ export class WonderService {
     );
   }
 
-  /**
-   * Filter wonders by type and search text
-   */
   filterWonders(
     wonders: Wonder[],
     types: string[],
@@ -48,7 +45,6 @@ export class WonderService {
       );
     }
 
-    // Always sort alphabetically
     return filtered.sort((a, b) => a.name.localeCompare(b.name));
   }
 }

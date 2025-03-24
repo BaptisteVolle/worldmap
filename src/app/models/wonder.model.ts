@@ -2,7 +2,7 @@ export interface Wonder {
   id: number;
   name: string;
   type: 'Wonder' | 'Natural Wonder';
-  coordinates: [number, number]; // [longitude, latitude]
+  coordinates: [number, number];
   wikipedia: string;
   description?: string;
   quote?: string;

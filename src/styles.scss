@@ -1,6 +1,5 @@
 @import "./custom-theme.scss";
 
-// Additional theme utility classes
 .color-primary {
   color: var(--primary);
 }
@@ -48,7 +47,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-/* Side panel */
 .map-menu {
   width: 300px;
   padding: 16px;
@@ -59,7 +57,6 @@ body {
   z-index: 1;
 }
 
-/* Leaflet control positioning */
 .leaflet-control-zoom {
   margin-bottom: 40px !important;
   margin-right: 20px !important;
@@ -69,22 +66,19 @@ body {
   margin-bottom: 20px !important;
 }
 
-/* Ensure Leaflet container fills available space */
 .leaflet-container {
   height: 100% !important;
   width: 100% !important;
 }
 
-/* Leaflet popup customizations */
 .wonder-popup {
   display: flex;
   width: 400px;
   padding: 5px 0;
 
-  /* Image container on the left */
   .wonder-popup-image {
     width: 120px;
-    min-width: 120px; /* Prevent shrinking */
+    min-width: 120px;
     height: 120px;
     margin-left: 10px;
     margin-right: 10px;
@@ -104,7 +98,6 @@ body {
     height: 138px;
   }
 
-  /* Content container */
   .wonder-content {
     flex: 1;
     padding: 0 10px;
@@ -157,15 +150,13 @@ body {
   }
 }
 
-/* Enhance marker styling */
 .natural-wonder-image-icon {
-  border: 3px solid #4caf50; /* Thicker green border */
+  border: 3px solid #4caf50;
   border-radius: 50%;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
-  background-color: rgba(76, 175, 80, 0.3); /* More visible background */
+  background-color: rgba(76, 175, 80, 0.3);
   overflow: hidden;
 
-  /* Add a glow effect */
   &:hover {
     box-shadow: 0 0 12px #4caf50, 0 3px 8px rgba(0, 0, 0, 0.5);
   }
@@ -176,7 +167,6 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-// Also ensure marker images are crisp
 .natural-wonder-image-icon img,
 .wonder-image-icon img {
   image-rendering: -webkit-optimize-contrast;
@@ -184,19 +174,17 @@ body {
 }
 
 .wonder-image-icon {
-  border: 3px solid #ff9800; /* Thicker orange border - more visible than gold */
+  border: 3px solid #ff9800;
   border-radius: 50%;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
-  background-color: rgba(255, 152, 0, 0.3); /* More visible background */
+  background-color: rgba(255, 152, 0, 0.3);
   overflow: hidden;
 
-  /* Add a glow effect */
   &:hover {
     box-shadow: 0 0 12px #ff9800, 0 3px 8px rgba(0, 0, 0, 0.5);
   }
 }
 
-/* Fix for popups near edges */
 .leaflet-popup {
   margin-bottom: 40px !important;
 }
@@ -204,9 +192,6 @@ body {
 mat-divider {
   margin: 16px 0;
 }
-/* Add this to your styles.scss file */
-
-// Add to your map.component.scss file
 
 .map-style-control {
   background-color: white;
@@ -265,7 +250,6 @@ mat-divider {
   filter: saturate(1.4) contrast(1.1) brightness(1.1);
 }
 
-/* Override Leaflet's default styles specifically for our control */
 .leaflet-touch .map-style-control a.style-option {
   width: auto !important;
   height: auto !important;

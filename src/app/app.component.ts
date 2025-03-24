@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-
-// Import our components and services
 import { MapComponent } from './components/map/map.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { WonderService } from './services/wonder.service';
@@ -42,10 +39,6 @@ export class AppComponent implements OnInit {
   onSearchChange(searchText: string): void {
     this.searchQuery = searchText;
     this.applyFilters();
-  }
-
-  onWonderSelected(wonder: Wonder): void {
-    // This will be passed to the map component
   }
 
   private applyFilters(): void {

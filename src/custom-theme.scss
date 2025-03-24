@@ -1,7 +1,5 @@
-// Custom theme definition with your colors
 @use "@angular/material" as mat;
 
-// Define custom primary palette based on #49d49d (green)
 $custom-primary-palette: (
   50: #e8f8f2,
   100: #c6eede,
@@ -27,7 +25,6 @@ $custom-primary-palette: (
   ),
 );
 
-// Define custom accent palette based on #95f9e3 (cyan)
 $custom-accent-palette: (
   50: #ebfefb,
   100: #cdfcf4,
@@ -53,18 +50,15 @@ $custom-accent-palette: (
   ),
 );
 
-// Create material palettes
 $custom-primary: mat.define-palette($custom-primary-palette, 500);
 $custom-accent: mat.define-palette($custom-accent-palette, 300);
 $custom-warn: mat.define-palette(mat.$red-palette, 700);
 
-// Additional semantic colors
 $custom-info: mat.define-palette(mat.$blue-palette, 600);
 $custom-success: mat.define-palette($custom-primary-palette, 500);
 $custom-warning: mat.define-palette(mat.$amber-palette, 500);
 $custom-error: mat.define-palette(mat.$red-palette, 700);
 
-// Create your custom theme
 $custom-theme: mat.define-light-theme(
   (
     color: (

@@ -45,12 +45,10 @@ export class SidebarComponent {
     const filters = [...this.selectedFilters];
 
     if (event.source.checked) {
-      // Add filter if not already present
       if (!filters.includes(filter)) {
         filters.push(filter);
       }
     } else {
-      // Remove filter
       const index = filters.indexOf(filter);
       if (index >= 0) {
         filters.splice(index, 1);
