@@ -27,31 +27,5 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production --base-href=/worldmap/
 
-      - name: Prepare for deployment
-        run: |
-          # Create _site directory for deployment
-          mkdir -p _site
-
-          # First, look for the output in the most common locations
-          if [ -d "dist/worldmap/browser" ] && [ -f "dist/worldmap/browser/index.html" ]; then
-            echo "Found build output in dist/worldmap/browser"
-            cp -r dist/worldmap/browser/* _site/
-            cp dist/worldmap/browser/index.html _site/404.html
-          elif [ -d "dist/browser" ] && [ -f "dist/browser/index.html" ]; then
-            echo "Found build output in dist/browser"
-            cp -r dist/browser/* _site/
-          fi
-
-          # Create .nojekyll file to bypass Jekyll processing
-          touch _site/.nojekyll
-
       - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.name "BaptisteVolle"
-          git config --global user.email "baptiste.volle@etu.imt-nord-europe.fr"
-          git checkout gh-pages || git checkout --orphan gh-pages
-          rm -rf ./*
-          cp -r _site/. .
-          git add -A
-          git commit -m "Deploy to GitHub Pages"
-          git push -f origin gh-pages
+        run: npx angular-cli-ghpages --dir=dist/worldmap/browser
