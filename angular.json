@@ -109,7 +109,12 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/worldmap/",
+            "directory": "dist/worldmap/browser",
+            "outDir": "dist/worldmap/browser"
+          }
         }
       }
     }

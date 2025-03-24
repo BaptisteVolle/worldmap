@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -27,8 +29,13 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production --base-href=/worldmap/
 
-      - name: Verify build output
-        run: ls -l dist/worldmap/browser/browser
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: dist/worldmap/browser
 
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/worldmap/browser/browser
+        uses: actions/deploy-pages@v1
