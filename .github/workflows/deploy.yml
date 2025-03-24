@@ -60,8 +60,9 @@ jobs:
           touch _site/.nojekyll
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
+          name: pages
           path: _site
 
       - name: Deploy to GitHub Pages
