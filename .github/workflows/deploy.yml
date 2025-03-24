@@ -27,5 +27,8 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production --base-href=/worldmap/
 
+      - name: Verify build output
+        run: ls -l dist/worldmap/browser
+
       - name: Deploy to GitHub Pages
         run: npx angular-cli-ghpages --dir=dist/worldmap/browser
