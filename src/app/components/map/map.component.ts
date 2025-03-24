@@ -157,7 +157,7 @@ export class MapComponent implements OnInit, OnDestroy {
       }
     );
 
-    this.mapLayers.positron.addTo(this.map);
+    this.mapLayers.voyager.addTo(this.map);
   }
 
   private addControls(): void {
