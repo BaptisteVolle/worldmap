@@ -60,7 +60,7 @@ jobs:
           touch _site/.nojekyll
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: pages
           path: _site
