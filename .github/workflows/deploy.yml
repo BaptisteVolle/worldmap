@@ -54,3 +54,4 @@ jobs:
           elif [ -d "dist/browser" ] && [ -f "dist/browser/index.html" ]; then
             echo "Found build output in dist/browser"
             cp -r dist/browser/* _site/
+          fi
