@@ -6,16 +6,12 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,45 +26,57 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Debug before build
+        run: |
+          echo "Angular.json:"
+          cat angular.json
+          echo "Package.json scripts:"
+          cat package.json | grep -A 10 \"scripts\"
+
       - name: Build
         run: npm run build -- --configuration production --base-href=/worldmap/
+
+      - name: Debug output directories
+        run: |
+          echo "Listing all directories:"
+          find dist -type d
+          echo "Listing first 20 files:"
+          find dist -type f | head -n 20
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: Find build output directory
-        id: find-output
+      - name: Prepare for deployment
         run: |
           if [ -d "dist/worldmap/browser" ]; then
-            echo "output_dir=dist/worldmap/browser" >> $GITHUB_OUTPUT
+            echo "Using dist/worldmap/browser"
+            cp dist/worldmap/browser/index.html dist/worldmap/browser/404.html
+            # Create .nojekyll file to prevent Jekyll processing
+            touch dist/worldmap/browser/.nojekyll
+            mkdir -p _site
+            cp -r dist/worldmap/browser/* _site/
           elif [ -d "dist/browser" ]; then
-            echo "output_dir=dist/browser" >> $GITHUB_OUTPUT
+            echo "Using dist/browser"
+            cp dist/browser/index.html dist/browser/404.html
+            touch dist/browser/.nojekyll
+            mkdir -p _site
+            cp -r dist/browser/* _site/
           elif [ -d "dist/worldmap" ]; then
-            echo "output_dir=dist/worldmap" >> $GITHUB_OUTPUT
+            echo "Using dist/worldmap"
+            cp dist/worldmap/index.html dist/worldmap/404.html
+            touch dist/worldmap/.nojekyll
+            mkdir -p _site
+            cp -r dist/worldmap/* _site/
           else
-            echo "No build output directory found!"
-            find dist -type d | sort
+            echo "No suitable build directory found!"
             exit 1
           fi
 
-      - name: Create 404.html
-        run: |
-          OUTPUT_DIR="${{ steps.find-output.outputs.output_dir }}"
-          echo "Using output directory: $OUTPUT_DIR"
-          cp "$OUTPUT_DIR/index.html" "$OUTPUT_DIR/404.html"
-
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.find-output.outputs.output_dir }}
+          path: "_site"
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
