@@ -29,6 +29,9 @@ jobs:
       - name: List files before copy
         run: ls -l dist/worldmap/browser
 
+      - name: Remove existing files from temp directory
+        run: rm -rf temp_deploy/*
+
       - name: Copy files to temp directory
         run: cp -r dist/worldmap/browser/* temp_deploy/
 
