@@ -23,10 +23,15 @@ jobs:
       - name: Build the project
         run: npm run build -- --base-href=/worldmap/
 
+      - name: Copy files to root
+        run: |
+          mkdir -p temp_deploy
+          cp -r dist/worldmap/browser/* temp_deploy/
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/worldmap/browser
+          folder: temp_deploy
           token: ${{ secrets.ACCESS_TOKEN }}
           clean: true
           target-folder: . # Deploy to the root of the gh-pages branch
